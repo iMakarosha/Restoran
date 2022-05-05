@@ -21,6 +21,7 @@ namespace Restoran
 {
     public partial class ProductsReceipt : Form
     {
+        Word.Application application;
         public ProductsReceipt()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace Restoran
             this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
             this.document_PostuplenieTableAdapter.Fill(this.restoranDataSet.Document_Postuplenie);
 
-            FindCustomers((int)dataGridView1[0, 0].Value);
+            //FindCustomers((int)dataGridView1[0, 0].Value);
         }
 
         DataView dvSearch;
@@ -159,19 +160,16 @@ namespace Restoran
         }
 
 
-        Word.Application application = new Word.Application();
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             _Document oDoc = GetDoc(System.Windows.Forms.Application.StartupPath + "\\Resources\\Doc\\2.dot");
-
-            Close();
         }
 
         private _Document GetDoc(string path)
         {
             try
             {
+                application = new Word.Application();
                 _Document oDoc = application.Documents.Add(path);
                 SetTemplate(oDoc);
                 return oDoc;

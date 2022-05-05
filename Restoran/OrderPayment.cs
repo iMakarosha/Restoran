@@ -55,7 +55,7 @@ namespace Restoran
                 PaymentToSuppliers Min_plateg = new PaymentToSuppliers();
 
                 Min_plateg.ID_Plateg = Doc_Plateg_poruchenie;
-                //   Min_zakaz.Text = "Новый заказ";
+                Min_plateg.Text = "Новый платеж";
                 Min_plateg.textBox1.Text = Convert.ToString(Doc_Plateg_poruchenie);
 
                 Min_plateg.Show();
@@ -78,14 +78,26 @@ namespace Restoran
             //Заказа нету
             //НДС
 
-            min.comboBox1_ID = (int)dataGridView1[3, CurrentRow].Value;
+            if (!string.IsNullOrEmpty(dataGridView1[3, CurrentRow].Value.ToString()))
+            {
+                min.comboBox1_ID = (int)dataGridView1[3, CurrentRow].Value;
+            }
             min.comboBox2_ = 1;
-            min.comboBox3_ID = (int)dataGridView1[5, CurrentRow].Value;
-            min.comboBox4_ID = (int)dataGridView1[7, CurrentRow].Value;
+            if (!string.IsNullOrEmpty(dataGridView1[5, CurrentRow].Value.ToString()))
+            {
+                min.comboBox3_ID = (int)dataGridView1[5, CurrentRow].Value;
+            }
+            if (!string.IsNullOrEmpty(dataGridView1[7, CurrentRow].Value.ToString()))
+            {
+                min.comboBox4_ID = (int)dataGridView1[7, CurrentRow].Value;
+            }
 
             min.textBox1.Text = dataGridView1[0, CurrentRow].Value.ToString();
 
-            min.dateTimePicker5.Value = Convert.ToDateTime(dataGridView1[2, CurrentRow].Value);
+            if (!string.IsNullOrEmpty(dataGridView1[2, CurrentRow].Value.ToString()))
+            {
+                min.dateTimePicker5.Value = Convert.ToDateTime(dataGridView1[2, CurrentRow].Value);
+            }
 
             min.textBox4.Text = dataGridView1[6, CurrentRow].Value.ToString();
 
@@ -95,13 +107,16 @@ namespace Restoran
 
             min.textBox5.Text = dataGridView1[10, CurrentRow].Value.ToString();
 
-            if ((int)dataGridView1[1, CurrentRow].Value == 1)
+            if (!string.IsNullOrEmpty(dataGridView1[1, CurrentRow].Value.ToString()))
             {
-                min.checkBox1.Checked = true;
-            }
-            else
-            {
-                min.checkBox1.Checked = false;
+                if ((int)dataGridView1[1, CurrentRow].Value == 1)
+                {
+                    min.checkBox1.Checked = true;
+                }
+                else
+                {
+                    min.checkBox1.Checked = false;
+                }
             }
 
             min.ID_Plateg = r;

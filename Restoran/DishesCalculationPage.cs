@@ -40,5 +40,10 @@ namespace Restoran
             ReportCalculation Otchet_1_Kal = new ReportCalculation();
             Otchet_1_Kal.Show();
         }
+
+        private void DishesCalculationPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

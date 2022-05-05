@@ -135,7 +135,8 @@ namespace Restoran
                     }
                     new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd);
                 }
-                MessageBox.Show("Удача!");
+                MessageBox.Show("Данные сохранены!");
+                this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
                 this.Close();
             }
         }
@@ -280,7 +281,15 @@ namespace Restoran
         {
             try
             {
-                string Nazvanie_NDC = "select Nazvanie from NDC where Id_NDC= " + comboBox4.SelectedValue.ToString();
+                string Nazvanie_NDC = "";
+                if (comboBox4.SelectedIndex != -1)
+                {
+                    Nazvanie_NDC = "select Nazvanie from NDC where Id_NDC= " + comboBox4.SelectedValue.ToString();
+                }
+                else
+                {
+                    Nazvanie_NDC = "select TOP () Nazvanie from NDC ";
+                }
                 object NDC = new Handlers.SqlConnectionHandler().GetQueryResult(Nazvanie_NDC);
 
                 if (NDC.ToString() == "18%" || NDC.ToString() == "18%/118%")
@@ -344,6 +353,7 @@ namespace Restoran
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -389,8 +399,7 @@ namespace Restoran
                     }
                     new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd);
                 }
-                //      MessageBox.Show("Удача!");
-                //   this.Close();
+                MessageBox.Show("Данные сохранены!");
             }
         }
     }

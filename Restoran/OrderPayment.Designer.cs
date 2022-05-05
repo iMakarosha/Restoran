@@ -65,6 +65,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -257,7 +260,7 @@
             // 
             this.zakaz_postavTableAdapter.ClearBeforeFill = true;
             // 
-            // Oplata_zakaza
+            // OrderPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,7 +268,7 @@
             this.ClientSize = new System.Drawing.Size(654, 408);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Oplata_zakaza";
+            this.Name = "OrderPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Платежное поручение";
             this.Activated += new System.EventHandler(this.Oplata_zakaza_Activated);

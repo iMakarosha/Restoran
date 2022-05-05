@@ -142,7 +142,7 @@ namespace Restoran
             DataRow rowB2 = restoranDataSet.Tables["Postuplenie_producta"].NewRow();
 
             rowB2["ID_Operacia_Postavshik"] = ID_Post;
-            rowB2["Kol_vo"] = 1f;
+            rowB2["Kol_vo"] = Convert.ToDecimal(0);
             rowB2["Cena"] = Convert.ToDecimal(0);
             rowB2["Summa_NDC"] = Convert.ToDecimal(0);
             rowB2["Summa_Kol_Cen"] = Convert.ToDecimal(0);
@@ -334,12 +334,12 @@ namespace Restoran
 
                 string cmb3 = "SELECT Kol_vo From Min_zakaz Where Id_zakaz_p= " + SV;
                 var Zcmb3 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb3);
-                List<int> Kol_vo = new List<int>();
+                List<decimal> Kol_vo = new List<decimal>();
 
                 foreach (var i in Zcmb3)
                 {
                     System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                    Kol_vo.Add(Convert.ToInt32(x.GetValue(0)));
+                    Kol_vo.Add(Convert.ToDecimal(x.GetValue(0)));
                 }
 
                 string cmb4 = "SELECT Cena From Min_zakaz Where Id_zakaz_p= " + SV;

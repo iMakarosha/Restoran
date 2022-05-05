@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditPlanning));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 445);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(487, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(554, 25);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -169,6 +169,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -184,10 +187,9 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.Location = new System.Drawing.Point(15, 17);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(406, 337);
+            this.dataGridView1.Size = new System.Drawing.Size(486, 337);
             this.dataGridView1.TabIndex = 23;
             // 
             // iDplaneDataGridViewTextBoxColumn
@@ -195,7 +197,6 @@
             this.iDplaneDataGridViewTextBoxColumn.DataPropertyName = "ID_plan_e";
             this.iDplaneDataGridViewTextBoxColumn.HeaderText = "ID_plan_e";
             this.iDplaneDataGridViewTextBoxColumn.Name = "iDplaneDataGridViewTextBoxColumn";
-            this.iDplaneDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDplaneDataGridViewTextBoxColumn.Visible = false;
             // 
             // iDproductDataGridViewTextBoxColumn
@@ -207,7 +208,6 @@
             this.iDproductDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iDproductDataGridViewTextBoxColumn.HeaderText = "Продукт";
             this.iDproductDataGridViewTextBoxColumn.Name = "iDproductDataGridViewTextBoxColumn";
-            this.iDproductDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDproductDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDproductDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDproductDataGridViewTextBoxColumn.ValueMember = "ID_product";
@@ -225,39 +225,35 @@
             // planiruetciaDataGridViewTextBoxColumn
             // 
             this.planiruetciaDataGridViewTextBoxColumn.DataPropertyName = "Planiruetcia";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.planiruetciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.planiruetciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.planiruetciaDataGridViewTextBoxColumn.HeaderText = "Планируется";
             this.planiruetciaDataGridViewTextBoxColumn.Name = "planiruetciaDataGridViewTextBoxColumn";
-            this.planiruetciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ostatoknacegodniaDataGridViewTextBoxColumn
             // 
             this.ostatoknacegodniaDataGridViewTextBoxColumn.DataPropertyName = "Ostatok_na_cegodnia";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ostatoknacegodniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.ostatoknacegodniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.ostatoknacegodniaDataGridViewTextBoxColumn.HeaderText = "Остаток";
             this.ostatoknacegodniaDataGridViewTextBoxColumn.Name = "ostatoknacegodniaDataGridViewTextBoxColumn";
-            this.ostatoknacegodniaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Kol_Plan
             // 
             this.Kol_Plan.DataPropertyName = "Kol_Plan";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Kol_Plan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Kol_Plan.DefaultCellStyle = dataGridViewCellStyle9;
             this.Kol_Plan.HeaderText = "Заказать";
             this.Kol_Plan.Name = "Kol_Plan";
-            this.Kol_Plan.ReadOnly = true;
             // 
             // iDPlanirovanieDataGridViewTextBoxColumn
             // 
             this.iDPlanirovanieDataGridViewTextBoxColumn.DataPropertyName = "ID_Planirovanie";
             this.iDPlanirovanieDataGridViewTextBoxColumn.HeaderText = "ID_Planirovanie";
             this.iDPlanirovanieDataGridViewTextBoxColumn.Name = "iDPlanirovanieDataGridViewTextBoxColumn";
-            this.iDPlanirovanieDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDPlanirovanieDataGridViewTextBoxColumn.Visible = false;
             // 
             // minPlanBindingSource
@@ -267,12 +263,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(16, 29);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(452, 409);
+            this.tabControl1.Size = new System.Drawing.Size(526, 409);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
@@ -295,16 +294,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(444, 383);
+            this.tabPage1.Size = new System.Drawing.Size(518, 383);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Стратегия расчета количества";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(20, 258);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(399, 91);
+            this.richTextBox1.Size = new System.Drawing.Size(480, 91);
             this.richTextBox1.TabIndex = 34;
             this.richTextBox1.Text = "";
             // 
@@ -429,7 +431,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(444, 383);
+            this.tabPage2.Size = new System.Drawing.Size(518, 383);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Планирование";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -442,17 +444,17 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // Min_planirovanie
+            // AddEditPlanning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(487, 470);
+            this.ClientSize = new System.Drawing.Size(554, 470);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Name = "Min_planirovanie";
+            this.Name = "AddEditPlanning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Планирование";
             this.Load += new System.EventHandler(this.Planirovanie_Load);

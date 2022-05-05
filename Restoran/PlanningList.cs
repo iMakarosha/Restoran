@@ -66,6 +66,7 @@ namespace Restoran
                 this.min_zakazTableAdapter.Update(restoranDataSet.Min_zakaz);
             }
 
+            AddEditOrderToSuppliers.allowRefill = true;
             this.Close();
         }
     }

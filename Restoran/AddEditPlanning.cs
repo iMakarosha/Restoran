@@ -69,7 +69,7 @@ namespace Restoran
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //       if (ef >= 1)
+            //if (ef >= 1)
             {
                 //параметризованный запрос
                 string sql = "Delete from Min_Plan WHERE ID_Planirovanie=@ID_Planirovanie";
@@ -351,7 +351,14 @@ namespace Restoran
 
                     rowB2["Ostatok_na_cegodnia"] = Convert.ToDouble(Ost.ToString());
 
-                    rowB2["Kol_Plan"] = Math.Round((Math.Round(rez, 2) - Convert.ToDouble(Ost.ToString())), 2);
+                    if (Math.Round((Math.Round(rez, 2) - Convert.ToDouble(Ost.ToString())), 2) > 0)
+                    {
+                        rowB2["Kol_Plan"] = Math.Round((Math.Round(rez, 2) - Convert.ToDouble(Ost.ToString())), 2);
+                    }
+                    else
+                    {
+                        rowB2["Kol_Plan"] = 0;
+                    }
                     rowB2["ID_Planirovanie"] = ID_plan;
 
                     restoranDataSet.Tables["Min_Plan"].Rows.Add(rowB2);

@@ -20,6 +20,8 @@ namespace Restoran
 {
     public partial class ReportCalculation : Form
     {
+        Word._Application application;
+
         public ReportCalculation()
         {
             InitializeComponent();
@@ -35,7 +37,10 @@ namespace Restoran
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Otchet_1". При необходимости она может быть перемещена или удалена.
             this.otchet_1TableAdapter.Fill(this.restoranDataSet.Otchet_1);
-            FindCustomers((int)dataGridView1[1, 0].Value);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                FindCustomers((int)dataGridView1[1, 0].Value);
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -51,18 +56,15 @@ namespace Restoran
             this.otchet_1TableAdapter.Update(this.restoranDataSet.Otchet_1);
         }
 
-        Word._Application application = new Word.Application();
-
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             _Document oDoc = GetDoc(System.Windows.Forms.Application.StartupPath + "\\Resources\\Doc\\1.dot");
-
-            Close();
         }
 
         private _Document GetDoc(string path)
         {
-            try { 
+            try {
+                application = new Word.Application();
                 _Document oDoc = application.Documents.Add(path);
                 SetTemplate(oDoc);
                 return oDoc;            

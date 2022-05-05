@@ -21,6 +21,8 @@ namespace Restoran
 
         public int ID_plan = -1;
 
+        public static bool allowRefill = true;
+
         public AddEditOrderToSuppliers()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace Restoran
             FindCustomers(ID_Zakaz);
 
             Perechet();
+            allowRefill = true;
         }
 
         #region Фильтор операций в таблице учет ТМЦ
@@ -88,6 +91,12 @@ namespace Restoran
                     k++;
                     break;
                 }
+            }
+
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите поставщика!");
+                k++;
             }
 
             if (k == 0)
@@ -150,6 +159,7 @@ namespace Restoran
             rowB2["Vcego"] = Convert.ToDecimal(0);
 
             restoranDataSet.Tables["Min_zakaz"].Rows.Add(rowB2);
+            allowRefill = false;
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)
@@ -163,18 +173,25 @@ namespace Restoran
                     dataGridView1.Rows.Remove(dataGridView1.Rows[CurrentRow]);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
+                allowRefill = false;
             }
         }
 
         void minus(int CurrentRow)
         {
-            double SummaO = Convert.ToDouble(label7.Text);
-            double SummaM = SummaO - Convert.ToDouble(dataGridView1[6, CurrentRow].Value.ToString());
-            label7.Text = Math.Round(SummaM, 2).ToString();
+            if (Convert.ToDouble(label7.Text) != 0 && !string.IsNullOrEmpty(dataGridView1[6, CurrentRow].Value.ToString()))
+            {
+                double SummaO = Convert.ToDouble(label7.Text);
+                double SummaM = SummaO - Convert.ToDouble(dataGridView1[6, CurrentRow].Value.ToString());
+                label7.Text = Math.Round(SummaM, 2).ToString();
 
-            double SummaNDC = Convert.ToDouble(label9.Text);
-            double SummaM_NDC = SummaNDC - Convert.ToDouble(dataGridView1[8, CurrentRow].Value.ToString());
-            label9.Text = Math.Round(SummaM_NDC, 2).ToString();
+                if (!string.IsNullOrEmpty(dataGridView1[8, CurrentRow].Value.ToString()))
+                {
+                    double SummaNDC = Convert.ToDouble(label9.Text);
+                    double SummaM_NDC = SummaNDC - Convert.ToDouble(dataGridView1[8, CurrentRow].Value.ToString());
+                    label9.Text = Math.Round(SummaM_NDC, 2).ToString();
+                }
+            }
         }
 
 
@@ -272,6 +289,7 @@ namespace Restoran
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             Perechet();
+            allowRefill = false;
         }
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -292,10 +310,13 @@ namespace Restoran
                     break;
                 }
             }
-
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите поставщика!");
+                k++;
+            }
             if (k == 0)
             {
-
                 this.Validate();
                 this.minzakazBindingSource.EndEdit();
                 this.min_zakazTableAdapter.Update(this.restoranDataSet.Min_zakaz);
@@ -304,7 +325,7 @@ namespace Restoran
                 myDate = dateTimePicker5.Value;
 
                 using (SqlCommand cmd = new SqlCommand("Update Zakaz_postav Set Data= @Data,"
-                        + "ID_Kontragent= @ID_Kontragent WHERE Id_zakaz_p= " + ID_Zakaz))
+                        + "ID_Kontragent= @ID_Kontragent, Summa= @Summa WHERE Id_zakaz_p= " + ID_Zakaz))
                 {
                     cmd.Parameters.AddWithValue("@Data", myDate);
                     cmd.Parameters.AddWithValue("@ID_Kontragent", comboBox1.SelectedValue);
@@ -335,6 +356,7 @@ namespace Restoran
 
                     new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd);
                 }
+                MessageBox.Show("Заказ проведен!");
             }
         }
 
@@ -383,13 +405,19 @@ namespace Restoran
         public void Clear(DataGridView dataGridView)
         {
             while (dataGridView.Rows.Count > 0)
-                for (int i = 0; i < dataGridView.Rows.Count; i++)
-                    dataGridView.Rows.Remove(dataGridView.Rows[i]);
+                dataGridView.Rows.Remove(dataGridView.Rows[0]);
+           
+            this.Validate();
+            this.minzakazBindingSource.EndEdit();
+            this.min_zakazTableAdapter.Update(this.restoranDataSet.Min_zakaz);
+
+            this.min_zakazTableAdapter.Fill(this.restoranDataSet.Min_zakaz);
+            allowRefill = false;
         }
 
         private void заполнитьПоВнутреннемуЗаказуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Будет очищена табличная часть. Продолжить?";
+            string message = "Табличная часть будет очищена без возможности восстановления. Продолжить?";
             string caption = "Предупреждение!";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -416,7 +444,8 @@ namespace Restoran
 
         private void Min_zakaz_Activated(object sender, EventArgs e)
         {
-            this.min_zakazTableAdapter.Fill(this.restoranDataSet.Min_zakaz);
+            if (allowRefill)
+                this.min_zakazTableAdapter.Fill(this.restoranDataSet.Min_zakaz);
         }
     }
 }

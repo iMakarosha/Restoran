@@ -104,7 +104,7 @@
             this.формаОП1ToolStripMenuItem.Text = "Форма ОП-1";
             this.формаОП1ToolStripMenuItem.Click += new System.EventHandler(this.формаОП1ToolStripMenuItem_Click);
             // 
-            // KALIK
+            // DishesCalculationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,9 +112,10 @@
             this.ClientSize = new System.Drawing.Size(423, 371);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "KALIK";
+            this.Name = "DishesCalculationPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Режим калькуляции блюд";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DishesCalculationPage_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

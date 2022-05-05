@@ -139,5 +139,10 @@ namespace Restoran
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
+
+        private void Orders_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

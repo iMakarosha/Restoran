@@ -71,6 +71,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -84,7 +87,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(430, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(476, 375);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
@@ -104,11 +107,11 @@
             this.iDDocBludoDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.iDDocBludoDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iDDocBludoDataGridViewTextBoxColumn.HeaderText = "Название блюда";
-            this.iDDocBludoDataGridViewTextBoxColumn.Width = 200;
             this.iDDocBludoDataGridViewTextBoxColumn.Name = "iDDocBludoDataGridViewTextBoxColumn";
             this.iDDocBludoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDDocBludoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDDocBludoDataGridViewTextBoxColumn.ValueMember = "ID_Doc_Bludo";
+            this.iDDocBludoDataGridViewTextBoxColumn.Width = 200;
             // 
             // bludoDocBindingSource
             // 
@@ -162,7 +165,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(454, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(500, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -197,6 +200,8 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -209,7 +214,7 @@
             this.cenazakgDataGridViewTextBoxColumn,
             this.summaDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.sostavBludaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(461, 88);
+            this.dataGridView2.Location = new System.Drawing.Point(507, 88);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(290, 243);
@@ -290,16 +295,16 @@
             this.bludoDocBindingSource1.DataMember = "Bludo_Doc";
             this.bludoDocBindingSource1.DataSource = this.restoranDataSet;
             // 
-            // Otchet_1_Kal
+            // ReportCalculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(454, 412);
+            this.ClientSize = new System.Drawing.Size(500, 412);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Otchet_1_Kal";
+            this.Name = "ReportCalculation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Калькуляционная карточка";
             this.Load += new System.EventHandler(this.Otchet_1_Kal_Load);

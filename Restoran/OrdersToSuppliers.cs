@@ -76,28 +76,22 @@ namespace Restoran
         {
             //try
             {
-                var k = restoranDataSet.Tables["Zakaz_postav"].Rows.Add();
+                string queryStr = "select top 1 Id_zakaz_p from Zakaz_postav order by Id_zakaz_p desc";
+                int orderId = Convert.ToInt32(new Handlers.SqlConnectionHandler().GetQueryResult(queryStr)) + 1;
+                
+                restoranDataSet.Tables["Zakaz_postav"].Rows.Add();
 
                 this.Validate();
                 this.zakazpostavBindingSource.EndEdit();
-                this.zakaz_postavTableAdapter.Update(this.restoranDataSet.Zakaz_postav);
-
-                object id = 0;
-                for (int i = dataGridView1.RowCount; i > 0; i--)
-                {
-                    id = 0;
-                    id = i;
-                    break;
-                }
-                int Doc_Zakaz = 0;
-                Doc_Zakaz = (int)dataGridView1[0, dataGridView1.Rows.Count - 1].Value;
-
+                this.zakaz_postavTableAdapter.Update(this.restoranDataSet.Zakaz_postav);                
+                
                 AddEditOrderToSuppliers Min_zakaz = new AddEditOrderToSuppliers();
 
-                Min_zakaz.ID_str_Zakaz = (int)id;
-                Min_zakaz.ID_Zakaz = Doc_Zakaz;
+                Min_zakaz.ID_Zakaz = orderId;
+                Min_zakaz.textBox1.Text = Convert.ToString(orderId);
+                
+                Min_zakaz.ID_str_Zakaz = (int)dataGridView1.RowCount + 1;
                 Min_zakaz.Text = "Новый заказ";
-                Min_zakaz.textBox1.Text = Convert.ToString(Doc_Zakaz);
 
                 Min_zakaz.Show();
             }
@@ -111,10 +105,31 @@ namespace Restoran
             {
                 if (dataGridView1[2, i].Value.ToString() == "")
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    this.Validate();
-                    this.zakazpostavBindingSource.EndEdit();
-                    this.zakaz_postavTableAdapter.Update(this.restoranDataSet.Zakaz_postav);
+                    try
+                    {
+                        string sql1 = "Delete from Zakaz_postav WHERE Id_zakaz_p=@Id_zakaz_p";
+
+                        string sql2 = "Delete from Min_zakaz WHERE Id_zakaz_p=@Id_zakaz_p";
+
+                        using (SqlCommand cmd2 = new SqlCommand(sql2))
+                        {
+                            cmd2.Parameters.AddWithValue("@Id_zakaz_p", Convert.ToInt32(dataGridView1[0, i].Value));
+                            new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd2);
+                        }
+
+                        using (SqlCommand cmd1 = new SqlCommand(sql1))
+                        {
+                            cmd1.Parameters.AddWithValue("@Id_zakaz_p", Convert.ToInt32(dataGridView1[0, i].Value));
+                            new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd1);
+                        }
+
+                        this.zakaz_postavTableAdapter.Fill(this.restoranDataSet.Zakaz_postav);
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }

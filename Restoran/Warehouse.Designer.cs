@@ -150,7 +150,7 @@
             this.поступлениеПродуктовToolStripMenuItem.Text = "Поступление продуктов";
             this.поступлениеПродуктовToolStripMenuItem.Click += new System.EventHandler(this.поступлениеПродуктовToolStripMenuItem_Click);
             // 
-            // SKLAD
+            // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,9 +158,11 @@
             this.ClientSize = new System.Drawing.Size(560, 342);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "SKLAD";
+            this.Name = "Warehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Режим работы со складом";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Warehouse_FormClosed);
+            this.Leave += new System.EventHandler(this.Warehouse_Leave);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

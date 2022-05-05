@@ -76,5 +76,15 @@ namespace Restoran
             ProductPrice s = new ProductPrice();
             s.Show();
         }
+
+        private void Warehouse_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Warehouse_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

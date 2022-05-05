@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iDminostatokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDbigostatokDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,9 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -128,9 +131,9 @@
             // vcegoDataGridViewTextBoxColumn
             // 
             this.vcegoDataGridViewTextBoxColumn.DataPropertyName = "Vcego";
-            dataGridViewCellStyle1.Format = "N3";
-            dataGridViewCellStyle1.NullValue = "0,000";
-            this.vcegoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N3";
+            dataGridViewCellStyle4.NullValue = "0,000";
+            this.vcegoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.vcegoDataGridViewTextBoxColumn.HeaderText = "Всего";
             this.vcegoDataGridViewTextBoxColumn.Name = "vcegoDataGridViewTextBoxColumn";
             this.vcegoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -139,9 +142,9 @@
             // izracxodavanoDataGridViewTextBoxColumn
             // 
             this.izracxodavanoDataGridViewTextBoxColumn.DataPropertyName = "Izracxodavano";
-            dataGridViewCellStyle2.Format = "N3";
-            dataGridViewCellStyle2.NullValue = "0,000";
-            this.izracxodavanoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "N3";
+            dataGridViewCellStyle5.NullValue = "0,000";
+            this.izracxodavanoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.izracxodavanoDataGridViewTextBoxColumn.HeaderText = "Израсходаванно";
             this.izracxodavanoDataGridViewTextBoxColumn.Name = "izracxodavanoDataGridViewTextBoxColumn";
             this.izracxodavanoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -150,9 +153,9 @@
             // ostalosDataGridViewTextBoxColumn
             // 
             this.ostalosDataGridViewTextBoxColumn.DataPropertyName = "Ostalos";
-            dataGridViewCellStyle3.Format = "N3";
-            dataGridViewCellStyle3.NullValue = "0,000";
-            this.ostalosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "N3";
+            dataGridViewCellStyle6.NullValue = "0,000";
+            this.ostalosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.ostalosDataGridViewTextBoxColumn.HeaderText = "Осталось";
             this.ostalosDataGridViewTextBoxColumn.Name = "ostalosDataGridViewTextBoxColumn";
             this.ostalosDataGridViewTextBoxColumn.ReadOnly = true;
@@ -175,6 +178,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -226,7 +231,7 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // Ostatok
+            // Balance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +239,7 @@
             this.ClientSize = new System.Drawing.Size(845, 408);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Ostatok";
+            this.Name = "Balance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сведения об остатках";
             this.Load += new System.EventHandler(this.Ostatok_Load);
