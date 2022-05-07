@@ -84,7 +84,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(430, 375);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
@@ -104,6 +104,7 @@
             this.iDDocBludoDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.iDDocBludoDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iDDocBludoDataGridViewTextBoxColumn.HeaderText = "Название блюда";
+            this.iDDocBludoDataGridViewTextBoxColumn.Width = 200;
             this.iDDocBludoDataGridViewTextBoxColumn.Name = "iDDocBludoDataGridViewTextBoxColumn";
             this.iDDocBludoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDDocBludoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -116,7 +117,7 @@
             // 
             // restoranDataSet
             // 
-            this.restoranDataSet.DataSetName = "RestoranDataSet";
+            this.restoranDataSet.DataSetName = "RestoranDatafSet";
             this.restoranDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataDataGridViewTextBoxColumn
@@ -161,7 +162,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(367, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(454, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -208,7 +209,7 @@
             this.cenazakgDataGridViewTextBoxColumn,
             this.summaDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.sostavBludaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(407, 88);
+            this.dataGridView2.Location = new System.Drawing.Point(461, 88);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(290, 243);
@@ -294,7 +295,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(367, 412);
+            this.ClientSize = new System.Drawing.Size(454, 412);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);

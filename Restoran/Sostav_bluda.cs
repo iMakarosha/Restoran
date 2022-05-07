@@ -98,7 +98,6 @@ namespace Restoran
             dataGridView1[6, id].Value = Convert.ToDecimal(Cena);
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             int k = 0;

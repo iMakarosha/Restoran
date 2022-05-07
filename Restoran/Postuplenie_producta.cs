@@ -32,6 +32,12 @@ namespace Restoran
             {
                 зАполнитьПоЗаказуПоставщикуToolStripMenuItem.Enabled = false;
             }
+
+            string queryStr = "select top 1 ID_Operacia_Postavshik from Document_Postuplenie order by ID_Operacia_Postavshik desc";
+
+            int Doc_post = Convert.ToInt32(new Handlers.SqlConnectionHandler().GetQueryResult(queryStr)) + 1;
+            this.textBox1.Text = Doc_post.ToString();
+            this.ID_Post = Doc_post;
         }
 
         private void Postuplenie_producta_Load(object sender, EventArgs e)
@@ -43,8 +49,10 @@ namespace Restoran
             this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
             this.postuplenie_productaTableAdapter.Fill(this.restoranDataSet.Postuplenie_producta);
 
-            comboBox1.SelectedValue = comboBox1_ID;
-
+            if (comboBox1_ID != -1)
+            {
+                comboBox1.SelectedValue = comboBox1_ID;
+            }
 
             if (comboBox2_ == 1)
             {
@@ -422,91 +430,94 @@ namespace Restoran
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox2_ == -1)
+            if (comboBox1.SelectedIndex != -1)
             {
-                comboBox2.Enabled = true;
-                try
+                if (comboBox2_ == -1)
                 {
-                    string cmb1 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb1 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb1);
-
-                    List<int> zakaz = new List<int>();
-                    foreach (var i in Zcmb1)
+                    comboBox2.Enabled = true;
+                    try
                     {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        zakaz.Add(Convert.ToInt32(x.GetValue(0)));
+                        string cmb1 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb1 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb1);
+
+                        List<int> zakaz = new List<int>();
+                        foreach (var i in Zcmb1)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            zakaz.Add(Convert.ToInt32(x.GetValue(0)));
+                        }
+
+                        string cmb2 = "SELECT Data From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb2 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb2);
+                        List<DateTime> Data = new List<DateTime>();
+
+                        foreach (var i in Zcmb2)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            Data.Add(Convert.ToDateTime(x.GetValue(0)));
+                        }
+
+                        comboBox2.Items.Clear();
+                        for (int i = 0; i < zakaz.Count; i++)
+                        {
+                            comboBox2.Items.Add("Заказ № " + Convert.ToString(zakaz[i].ToString()) + " от " + Data[i].ToString());
+                        }
+
+                        string cmb3 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb3 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb3);
+                        comboBox3.Items.Clear();
+
+                        foreach (var i in Zcmb3)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            comboBox3.Items.Add(Convert.ToString(x.GetValue(0)));
+                        }
                     }
-
-                    string cmb2 = "SELECT Data From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb2 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb2);
-                    List<DateTime> Data = new List<DateTime>();
-
-                    foreach (var i in Zcmb2)
-                    {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        Data.Add(Convert.ToDateTime(x.GetValue(0)));
-                    }
-
-                    comboBox2.Items.Clear();
-                    for (int i = 0; i < zakaz.Count; i++)
-                    {
-                        comboBox2.Items.Add("Заказ № " + Convert.ToString(zakaz[i].ToString()) + " от " + Data[i].ToString());
-                    }
-
-                    string cmb3 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb3 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb3);
-                    comboBox3.Items.Clear();
-
-                    foreach (var i in Zcmb3)
-                    {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        comboBox3.Items.Add(Convert.ToString(x.GetValue(0)));
-                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
-            }
 
-            if (comboBox2_ == 1)
-            {
-                try
+                if (comboBox2_ == 1)
                 {
-                    string cmb1 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb1 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb1);
-
-                    List<int> zakaz = new List<int>();
-                    foreach (var i in Zcmb1)
+                    try
                     {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        zakaz.Add(Convert.ToInt32(x.GetValue(0)));
+                        string cmb1 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb1 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb1);
+
+                        List<int> zakaz = new List<int>();
+                        foreach (var i in Zcmb1)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            zakaz.Add(Convert.ToInt32(x.GetValue(0)));
+                        }
+
+                        string cmb2 = "SELECT Data From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb2 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb2);
+                        List<DateTime> Data = new List<DateTime>();
+
+                        foreach (var i in Zcmb2)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            Data.Add(Convert.ToDateTime(x.GetValue(0)));
+                        }
+
+                        comboBox2.Items.Clear();
+                        for (int i = 0; i < zakaz.Count; i++)
+                        {
+                            comboBox2.Items.Add("Заказ № " + Convert.ToString(zakaz[i].ToString()) + " от " + Data[i].ToString());
+                        }
+
+                        string cmb3 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
+                        var Zcmb3 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb3);
+                        comboBox3.Items.Clear();
+
+                        foreach (var i in Zcmb3)
+                        {
+                            System.Array x = ((System.Array)(i));  //приводим к типу System.Array
+                            comboBox3.Items.Add(Convert.ToString(x.GetValue(0)));
+                        }
                     }
-
-                    string cmb2 = "SELECT Data From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb2 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb2);
-                    List<DateTime> Data = new List<DateTime>();
-
-                    foreach (var i in Zcmb2)
-                    {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        Data.Add(Convert.ToDateTime(x.GetValue(0)));
-                    }
-
-                    comboBox2.Items.Clear();
-                    for (int i = 0; i < zakaz.Count; i++)
-                    {
-                        comboBox2.Items.Add("Заказ № " + Convert.ToString(zakaz[i].ToString()) + " от " + Data[i].ToString());
-                    }
-
-                    string cmb3 = "SELECT Id_zakaz_p From Zakaz_postav Where ID_Kontragent=" + comboBox1.SelectedValue;
-                    var Zcmb3 = new Handlers.SqlConnectionHandler().GetQueryResultList(cmb3);
-                    comboBox3.Items.Clear();
-
-                    foreach (var i in Zcmb3)
-                    {
-                        System.Array x = ((System.Array)(i));  //приводим к типу System.Array
-                        comboBox3.Items.Add(Convert.ToString(x.GetValue(0)));
-                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 
@@ -535,9 +546,22 @@ namespace Restoran
                 k++;
                 MessageBox.Show("Выберите поставщика! ");
             }
+            if (string.IsNullOrEmpty(comboBox3.Text))
+            {
+                k++;
+                MessageBox.Show("Выберите номер заказа! ");
+            }
 
             if (k == 0)
             {
+                if (this.Text == "Оформить поступление продуктов на склад")
+                {
+                    restoranDataSet.Tables["Document_Postuplenie"].Rows.Add();
+                }
+                this.Validate();
+                this.documentPostuplenieBindingSource.EndEdit();
+                this.document_PostuplenieTableAdapter.Update(this.restoranDataSet.Document_Postuplenie); 
+                
                 this.Validate();
                 this.postuplenieproductaBindingSource.EndEdit();
                 this.postuplenie_productaTableAdapter.Update(this.restoranDataSet.Postuplenie_producta);
@@ -580,9 +604,22 @@ namespace Restoran
                 k++;
                 MessageBox.Show("Выберите поставщика! ");
             }
+            if (string.IsNullOrEmpty(comboBox3.Text))
+            {
+                k++;
+                MessageBox.Show("Выберите номер заказа! ");
+            }
 
             if (k == 0)
             {
+                if (this.Text == "Оформить поступление продуктов на склад")
+                {
+                    restoranDataSet.Tables["Document_Postuplenie"].Rows.Add();
+                }
+                this.Validate();
+                this.documentPostuplenieBindingSource.EndEdit();
+                this.document_PostuplenieTableAdapter.Update(this.restoranDataSet.Document_Postuplenie);
+
                 this.Validate();
                 this.postuplenieproductaBindingSource.EndEdit();
                 this.postuplenie_productaTableAdapter.Update(this.restoranDataSet.Postuplenie_producta);
@@ -602,6 +639,8 @@ namespace Restoran
 
                     new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd);
                 }
+
+                MessageBox.Show("Документ проведен!");
             }
         }
 

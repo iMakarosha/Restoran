@@ -195,16 +195,19 @@ namespace Restoran
             this.otchet1BindingSource.EndEdit();
             this.otchet_1TableAdapter.Update(this.restoranDataSet.Otchet_1);
 
-            try
+            if (dataGridView1.SelectedCells.Count > 0)
             {
-                int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
-                int ID_Doc_Bluda = (int)dataGridView1[1, CurrentRow].Value;
+                try
+                {
+                    int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+                    int ID_Doc_Bluda = (int)dataGridView1[1, CurrentRow].Value;
 
-                FindCustomers(ID_Doc_Bluda);
+                    FindCustomers(ID_Doc_Bluda);
 
-                this.Validate();
+                    this.Validate();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         DataView dvSearch;
@@ -241,11 +244,14 @@ namespace Restoran
             try
             {
                 int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
-                int ID_Doc_Bluda = (int)dataGridView1[1, CurrentRow].Value;
+                if (!string.IsNullOrEmpty(dataGridView1[1, CurrentRow].Value.ToString()))
+                {
+                    int ID_Doc_Bluda = (int)dataGridView1[1, CurrentRow].Value;
 
-                FindCustomers(ID_Doc_Bluda);
+                    FindCustomers(ID_Doc_Bluda);
 
-                this.Validate();
+                    this.Validate();
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

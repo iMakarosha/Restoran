@@ -31,23 +31,8 @@ namespace Restoran
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            //      try
+            try
             {
-                var k = restoranDataSet.Tables["Document_Postuplenie"].Rows.Add();
-                this.Validate();
-                this.documentPostuplenieBindingSource.EndEdit();
-                this.document_PostuplenieTableAdapter.Update(this.restoranDataSet.Document_Postuplenie);
-
-                object id = 0;
-                for (int i = dataGridView1.RowCount; i > 0; i--)
-                {
-                    id = 0;
-                    id = i;
-                    break;
-                }
-                int Doc_post = 0;
-                Doc_post = (int)dataGridView1[0, dataGridView1.Rows.Count - 1].Value;
-
                 Postuplenie_producta Postuplenie_producta = new Postuplenie_producta();
 
                 Postuplenie_producta.comboBox3.SelectedIndex = -1;
@@ -56,14 +41,11 @@ namespace Restoran
 
                 Postuplenie_producta.comboBox2.Enabled = false;
 
-                Postuplenie_producta.textBox1.Text = Doc_post.ToString();
-                Postuplenie_producta.ID_Post = Doc_post;
                 Postuplenie_producta.Text = "Оформить поступление продуктов на склад";
                 Postuplenie_producta.Show();
 
             }
-            //    catch (Exception)
-            { }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -185,7 +167,6 @@ namespace Restoran
 
             Close();
         }
-
 
         private _Document GetDoc(string path)
         {

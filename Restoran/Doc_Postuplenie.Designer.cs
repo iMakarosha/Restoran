@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doc_Postuplenie));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDOperaciaPostavshikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,9 +136,9 @@
             // summaItogoDataGridViewTextBoxColumn
             // 
             this.summaItogoDataGridViewTextBoxColumn.DataPropertyName = "Summa_Itogo";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.summaItogoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.summaItogoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.summaItogoDataGridViewTextBoxColumn.HeaderText = "Сумма";
             this.summaItogoDataGridViewTextBoxColumn.Name = "summaItogoDataGridViewTextBoxColumn";
             this.summaItogoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -190,7 +190,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(153, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(160, 22);
             this.toolStripButton2.Text = "Добавить поступление";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -199,7 +199,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(145, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(150, 22);
             this.toolStripButton3.Text = "Удалить поступление";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -208,7 +208,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(147, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(155, 22);
             this.toolStripButton1.Text = "Приходная накладная";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -308,6 +308,7 @@
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Doc_Postuplenie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поступление продуктов";
             this.Activated += new System.EventHandler(this.Doc_Postuplenie_Activated);
             this.Load += new System.EventHandler(this.Doc_Postuplenie_Load_1);
