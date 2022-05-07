@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Restoran.ADD_Kontragent" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cCCAAAAAASABgBGAACaAABZCJAACAAAQEAAAAACBBBA=</HashCode>
+      <FileName>ADD_Kontragent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Add_Sotrudnik" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABICKABABAQAECAAAGCABg4QAAAEEAAAAABQgA=</HashCode>
+      <FileName>Add_Sotrudnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Avtorization" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAhABAQAACAAAGCAAAoAIAAkEAIAAAAQBA=</HashCode>
+      <FileName>Avtorization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Bluda" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEBCACAigRAAALwEmQcBgCgLwAAIAEAAEIEIABADA=</HashCode>
+      <FileName>Bluda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Cena_producta" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACgBAQAAAADCEAACAAgAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Cena_producta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Dannie" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9yCAAEAAASAAQBGAkCeAABYCBAAAgAAAEABAAAABBIA=</HashCode>
+      <FileName>Dannie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.DataSet1_for_otchet" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAgCwAAAAJQBAAAQACEAAgCQBgAQIAAAAEABBg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Doc_Postuplenie" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAEgECCygFAACBogGAMFqCIBgCAIEAAAEIEACAEBI=</HashCode>
+      <FileName>Doc_Postuplenie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Edinica" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAiywRAACBYgmQEEoCgLgAAAAAAEAAEAABEAA=</HashCode>
+      <FileName>Edinica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Form1" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KYAAABAAASEAAyAMQgCkACQCQgJUAAACggQAAAIFYAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Grupp_Blud" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAhAAAACABgIAIgAWAEBgCEByAAAAGAAAgEAABADA=</HashCode>
+      <FileName>Grupp_Blud.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Kalculiac" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJCBAFEAygRAQACQADQQAACAAgAQgAAACAAAoAAAAA=</HashCode>
+      <FileName>Kalculiac.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.KALIK" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAgAAACEAACCAEAAAIBAAAABBIEIAAA=</HashCode>
+      <FileName>KALIK.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Kontragent" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gDAAAgACCCIhACAAoEGAMFkCABgCAIAAAAEAAQiAAAI=</HashCode>
+      <FileName>Kontragent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Min_plateg" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAaAhABASgHWAjBoCIAACAREAOAAZAEGAABA=</HashCode>
+      <FileName>Min_plateg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Min_plan" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Min_postup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Min_zakaz" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAoEAA2gBAZAaolXAkForAggiIQACEAkIAkCAgBI=</HashCode>
+      <FileName>Min_zakaz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Oplata_zakaza" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAiAAAGAxAAAAEAGAEBhCAAiCAAQICAEAAACCgAI=</HashCode>
+      <FileName>Oplata_zakaza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Ostatok" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAIgEAAysBAQCAIADAAAgCMBgAAAAAAAAIAABAEBI=</HashCode>
+      <FileName>Ostatok.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Otchet_1_Kal" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAMAFgEAgigVAIAA0A2QUBqCgpgAIAAAAAAJAAABABA=</HashCode>
+      <FileName>Otchet_1_Kal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Otchet_po_zakazam_p" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACAFgAAAICCIAAQCAAAAAAAAAAAIAQAAABI=</HashCode>
+      <FileName>Otchet_po_zakazam_p.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Planirovanie" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAgawHARCCAmDCAFoCgBgCCAAAAMAMAAHACBI=</HashCode>
+      <FileName>Planirovanie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Polzovatel" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAABACCABAAAAIACAEEGDABgwQAAAAAAAAAgBQAA=</HashCode>
+      <FileName>Polzovatel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Postuplenie_producta" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMCAKVAC2ghAZCTglfAuB4CAAgGIYAAEAgIEEDAEBQ=</HashCode>
+      <FileName>Postuplenie_producta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Product" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAACywRAQCBYgnQEEoCgLgAAAAAAAAAEAABEAg=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Program" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSet" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IsBDAQVsXwwEYoPwJBpL4oCUBDkC6lggQMEpLQEBJ5o=</HashCode>
+      <FileName>RestoranDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.SKLAD" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QUACBBAEBCgEAogAAICAAAACAFAAAKAAAAARAgAAAEA=</HashCode>
+      <FileName>SKLAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Sostav_bluda" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCISBIEAEjgJAZKZwAnUEBoCgpwIIQEUkEAIgAABAhQ=</HashCode>
+      <FileName>Sostav_bluda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Sotrudniki" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABACCRBAAAAAAGgEBmCABAgUAAAAAAAAAABQgA=</HashCode>
+      <FileName>Sotrudniki.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Zakaz" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgBACyhRAAACwgGQURgCAjgAAiAAACEIIIAAECA=</HashCode>
+      <FileName>Zakaz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Zakaz_postav" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAGARAAAAgACAEhgCAAgCAAgCAAEBAACCAAI=</HashCode>
+      <FileName>Zakaz_postav.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Zakazat" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCLQBgNACzx7ABObQgHVUAoCIvwIIgAOAGAIMoABEDQ=</HashCode>
+      <FileName>Zakazat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.DataSet1_for_otchetTableAdapters.Min_zakazTableAdapter" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.DataSet1_for_otchetTableAdapters.ProductTableAdapter" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.DataSet1_for_otchetTableAdapters.Edinica_izmereniaTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.DataSet1_for_otchetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABEEBAAIAMAAkAAACgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIComponent.DateTimePicker" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAEAAAAAAEAAAACAAIAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>DateTimePicker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAEAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.Properties.Settings" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAEBAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.AvtorizationTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Big_ostatokTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Bludo_DocTableAdapter" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.DannieTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Document_PostuplenieTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Document_ZakazzTableAdapter" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.DolgnostTableAdapter" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Edinica_izmereniaTableAdapter" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Gruppa_bludTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.KalkuliacTableAdapter" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.KontragentTableAdapter" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Min_ostatokTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Min_PlanTableAdapter" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Min_plategnoe_pTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Min_zakazTableAdapter" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.NDCTableAdapter" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Otchet_1TableAdapter" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.PlanirovanieTableAdapter" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Postuplenie_productaTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.ProductTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Sostav_BludaTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.SotrudnikiTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.ZakazTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.Zakaz_postavTableAdapter" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restoran.RestoranDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hT0AIDhEIoFAlEEBxAICOYCkgJCDgAAAAaUYAAQAJBQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

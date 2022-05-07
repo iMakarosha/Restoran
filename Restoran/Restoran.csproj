@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D878818-FE1A-4AC5-A9B8-E51D9244AF45}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Restoran</RootNamespace>
+    <AssemblyName>Restoran</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Paomedia-Small-N-Flat-Shop.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewColumnsTrial">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\RustemSoft\DataGridViewColumns .NET assembly\DataGridViewColumnsTrial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADD_Kontragent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Kontragent.Designer.cs">
+      <DependentUpon>ADD_Kontragent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Sotrudnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Sotrudnik.Designer.cs">
+      <DependentUpon>Add_Sotrudnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avtorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avtorization.Designer.cs">
+      <DependentUpon>Avtorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bluda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bluda.Designer.cs">
+      <DependentUpon>Bluda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cena_producta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cena_producta.Designer.cs">
+      <DependentUpon>Cena_producta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dannie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dannie.Designer.cs">
+      <DependentUpon>Dannie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_for_otchet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_for_otchet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Doc_Postuplenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Postuplenie.Designer.cs">
+      <DependentUpon>Doc_Postuplenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edinica.Designer.cs">
+      <DependentUpon>Edinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupp_Blud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupp_Blud.Designer.cs">
+      <DependentUpon>Grupp_Blud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\SqlConnectionHandler.cs" />
+    <Compile Include="Kalculiac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kalculiac.Designer.cs">
+      <DependentUpon>Kalculiac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KALIK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KALIK.Designer.cs">
+      <DependentUpon>KALIK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kontragent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontragent.Designer.cs">
+      <DependentUpon>Kontragent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planirovanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planirovanie.Designer.cs">
+      <DependentUpon>Planirovanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Min_plateg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Min_plateg.Designer.cs">
+      <DependentUpon>Min_plateg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Min_zakaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Min_zakaz.Designer.cs">
+      <DependentUpon>Min_zakaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oplata_zakaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oplata_zakaza.Designer.cs">
+      <DependentUpon>Oplata_zakaza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ostatok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ostatok.Designer.cs">
+      <DependentUpon>Ostatok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Otchet_1_Kal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet_1_Kal.Designer.cs">
+      <DependentUpon>Otchet_1_Kal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Otchet_po_zakazam_p.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet_po_zakazam_p.Designer.cs">
+      <DependentUpon>Otchet_po_zakazam_p.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Min_planirovanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Min_planirovanie.Designer.cs">
+      <DependentUpon>Min_planirovanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Polzovatel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Polzovatel.Designer.cs">
+      <DependentUpon>Polzovatel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Postuplenie_producta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Postuplenie_producta.Designer.cs">
+      <DependentUpon>Postuplenie_producta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestoranDataSet.cs">
+      <DependentUpon>RestoranDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RestoranDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestoranDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SKLAD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SKLAD.Designer.cs">
+      <DependentUpon>SKLAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sostav_bluda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sostav_bluda.Designer.cs">
+      <DependentUpon>Sostav_bluda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrudniki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sotrudniki.Designer.cs">
+      <DependentUpon>Sotrudniki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpisokPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpisokPlan.Designer.cs">
+      <DependentUpon>SpisokPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zakaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakaz.Designer.cs">
+      <DependentUpon>Zakaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zakazat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakazat.Designer.cs">
+      <DependentUpon>Zakazat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zakaz_postav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakaz_postav.Designer.cs">
+      <DependentUpon>Zakaz_postav.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ADD_Kontragent.resx">
+      <DependentUpon>ADD_Kontragent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Sotrudnik.resx">
+      <DependentUpon>Add_Sotrudnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avtorization.resx">
+      <DependentUpon>Avtorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bluda.resx">
+      <DependentUpon>Bluda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cena_producta.resx">
+      <DependentUpon>Cena_producta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dannie.resx">
+      <DependentUpon>Dannie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimePicker.resx">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Postuplenie.resx">
+      <DependentUpon>Doc_Postuplenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edinica.resx">
+      <DependentUpon>Edinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupp_Blud.resx">
+      <DependentUpon>Grupp_Blud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kalculiac.resx">
+      <DependentUpon>Kalculiac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KALIK.resx">
+      <DependentUpon>KALIK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontragent.resx">
+      <DependentUpon>Kontragent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planirovanie.resx">
+      <DependentUpon>Planirovanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Min_plateg.resx">
+      <DependentUpon>Min_plateg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Min_zakaz.resx">
+      <DependentUpon>Min_zakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oplata_zakaza.resx">
+      <DependentUpon>Oplata_zakaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ostatok.resx">
+      <DependentUpon>Ostatok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Otchet_1_Kal.resx">
+      <DependentUpon>Otchet_1_Kal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Otchet_po_zakazam_p.resx">
+      <DependentUpon>Otchet_po_zakazam_p.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Min_planirovanie.resx">
+      <DependentUpon>Min_planirovanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Polzovatel.resx">
+      <DependentUpon>Polzovatel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Postuplenie_producta.resx">
+      <DependentUpon>Postuplenie_producta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="SKLAD.resx">
+      <DependentUpon>SKLAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sostav_bluda.resx">
+      <DependentUpon>Sostav_bluda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sotrudniki.resx">
+      <DependentUpon>Sotrudniki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpisokPlan.resx">
+      <DependentUpon>SpisokPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakaz.resx">
+      <DependentUpon>Zakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakazat.resx">
+      <DependentUpon>Zakazat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakaz_postav.resx">
+      <DependentUpon>Zakaz_postav.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1_for_otchet.xsc">
+      <DependentUpon>DataSet1_for_otchet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_for_otchet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_for_otchet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1_for_otchet.xss">
+      <DependentUpon>DataSet1_for_otchet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RestoranDataSet.xsc">
+      <DependentUpon>RestoranDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RestoranDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RestoranDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RestoranDataSet.xss">
+      <DependentUpon>RestoranDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Безымянный.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\РР.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Paomedia-Small-N-Flat-Shop.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
