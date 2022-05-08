@@ -56,7 +56,7 @@ namespace Restoran
                     //Товаровед
                     if (id == 4)
                     {
-                        SKLAD z = new SKLAD();
+                        Warehouse z = new Warehouse();
                         z.Show();
                         this.Hide();
                     }
@@ -64,14 +64,14 @@ namespace Restoran
                     //Заказы: Официант
                     if (id == 2)
                     {
-                        Zakaz z = new Zakaz();
+                        Orders z = new Orders();
                         z.Show();
                         this.Hide();
                     }
                     //админ
                     if (id == 3)
                     {
-                        Form1 f = new Form1();
+                        AdminStartPage f = new AdminStartPage();
                         //Главная_форма f = new Главная_форма();
                         //f.блюдаToolStripMenuItem.Visible = false;
                         //f.группаБлюдToolStripMenuItem.Visible = false;
@@ -85,7 +85,7 @@ namespace Restoran
                     //калькулятор
                     if (id == 5)
                     {
-                        KALIK f = new KALIK();
+                        DishesCalculationPage f = new DishesCalculationPage();
                         //   f.сотрудникиToolStripMenuItem1.Visible = false;
                         f.Text = "Подсистема Калькулятора";
                         f.Show();

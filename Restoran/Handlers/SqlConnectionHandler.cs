@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Restoran.Handlers
 {
-    class SqlConnectionHandler
+    public class SqlConnectionHandler
     {
         public SqlConnection GetConnection()
         {

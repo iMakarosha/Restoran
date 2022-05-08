@@ -75,17 +75,17 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADD_Kontragent.cs">
+    <Compile Include="AddEditPartner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ADD_Kontragent.Designer.cs">
-      <DependentUpon>ADD_Kontragent.cs</DependentUpon>
+    <Compile Include="AddEditPartner.Designer.cs">
+      <DependentUpon>AddEditPartner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add_Sotrudnik.cs">
+    <Compile Include="AddEditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_Sotrudnik.Designer.cs">
-      <DependentUpon>Add_Sotrudnik.cs</DependentUpon>
+    <Compile Include="AddEditEmployee.Designer.cs">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Avtorization.cs">
       <SubType>Form</SubType>
@@ -93,17 +93,17 @@
     <Compile Include="Avtorization.Designer.cs">
       <DependentUpon>Avtorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bluda.cs">
+    <Compile Include="Dishes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bluda.Designer.cs">
-      <DependentUpon>Bluda.cs</DependentUpon>
+    <Compile Include="Dishes.Designer.cs">
+      <DependentUpon>Dishes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cena_producta.cs">
+    <Compile Include="ProductPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cena_producta.Designer.cs">
-      <DependentUpon>Cena_producta.cs</DependentUpon>
+    <Compile Include="ProductPrice.Designer.cs">
+      <DependentUpon>ProductPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Dannie.cs">
       <SubType>Form</SubType>
@@ -119,108 +119,109 @@
     <Compile Include="DateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Doc_Postuplenie.cs">
+    <Compile Include="ProductsReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doc_Postuplenie.Designer.cs">
-      <DependentUpon>Doc_Postuplenie.cs</DependentUpon>
+    <Compile Include="ProductsReceipt.Designer.cs">
+      <DependentUpon>ProductsReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edinica.cs">
+    <Compile Include="Measure.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edinica.Designer.cs">
-      <DependentUpon>Edinica.cs</DependentUpon>
+    <Compile Include="Measure.Designer.cs">
+      <DependentUpon>Measure.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdminStartPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdminStartPage.Designer.cs">
+      <DependentUpon>AdminStartPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupp_Blud.cs">
+    <Compile Include="DishGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupp_Blud.Designer.cs">
-      <DependentUpon>Grupp_Blud.cs</DependentUpon>
+    <Compile Include="DishGroups.Designer.cs">
+      <DependentUpon>DishGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\DocumentHandler.cs" />
     <Compile Include="Handlers\SqlConnectionHandler.cs" />
-    <Compile Include="Kalculiac.cs">
+    <Compile Include="Calculation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kalculiac.Designer.cs">
-      <DependentUpon>Kalculiac.cs</DependentUpon>
+    <Compile Include="Calculation.Designer.cs">
+      <DependentUpon>Calculation.cs</DependentUpon>
     </Compile>
-    <Compile Include="KALIK.cs">
+    <Compile Include="DishesCalculationPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KALIK.Designer.cs">
-      <DependentUpon>KALIK.cs</DependentUpon>
+    <Compile Include="DishesCalculationPage.Designer.cs">
+      <DependentUpon>DishesCalculationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kontragent.cs">
+    <Compile Include="Partners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kontragent.Designer.cs">
-      <DependentUpon>Kontragent.cs</DependentUpon>
+    <Compile Include="Partners.Designer.cs">
+      <DependentUpon>Partners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planirovanie.cs">
+    <Compile Include="Planning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planirovanie.Designer.cs">
-      <DependentUpon>Planirovanie.cs</DependentUpon>
+    <Compile Include="Planning.Designer.cs">
+      <DependentUpon>Planning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Min_plateg.cs">
+    <Compile Include="PaymentToSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Min_plateg.Designer.cs">
-      <DependentUpon>Min_plateg.cs</DependentUpon>
+    <Compile Include="PaymentToSuppliers.Designer.cs">
+      <DependentUpon>PaymentToSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Min_zakaz.cs">
+    <Compile Include="AddEditOrderToSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Min_zakaz.Designer.cs">
-      <DependentUpon>Min_zakaz.cs</DependentUpon>
+    <Compile Include="AddEditOrderToSuppliers.Designer.cs">
+      <DependentUpon>AddEditOrderToSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Oplata_zakaza.cs">
+    <Compile Include="OrderPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Oplata_zakaza.Designer.cs">
-      <DependentUpon>Oplata_zakaza.cs</DependentUpon>
+    <Compile Include="OrderPayment.Designer.cs">
+      <DependentUpon>OrderPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ostatok.cs">
+    <Compile Include="Balance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ostatok.Designer.cs">
-      <DependentUpon>Ostatok.cs</DependentUpon>
+    <Compile Include="Balance.Designer.cs">
+      <DependentUpon>Balance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otchet_1_Kal.cs">
+    <Compile Include="ReportCalculation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otchet_1_Kal.Designer.cs">
-      <DependentUpon>Otchet_1_Kal.cs</DependentUpon>
+    <Compile Include="ReportCalculation.Designer.cs">
+      <DependentUpon>ReportCalculation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otchet_po_zakazam_p.cs">
+    <Compile Include="ReportOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Otchet_po_zakazam_p.Designer.cs">
-      <DependentUpon>Otchet_po_zakazam_p.cs</DependentUpon>
+    <Compile Include="ReportOrders.Designer.cs">
+      <DependentUpon>ReportOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Min_planirovanie.cs">
+    <Compile Include="AddEditPlanning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Min_planirovanie.Designer.cs">
-      <DependentUpon>Min_planirovanie.cs</DependentUpon>
+    <Compile Include="AddEditPlanning.Designer.cs">
+      <DependentUpon>AddEditPlanning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Polzovatel.cs">
+    <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Polzovatel.Designer.cs">
-      <DependentUpon>Polzovatel.cs</DependentUpon>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="Postuplenie_producta.cs">
+    <Compile Include="AddEditProductReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Postuplenie_producta.Designer.cs">
-      <DependentUpon>Postuplenie_producta.cs</DependentUpon>
+    <Compile Include="AddEditProductReceipt.Designer.cs">
+      <DependentUpon>AddEditProductReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
@@ -238,62 +239,62 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RestoranDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SKLAD.cs">
+    <Compile Include="Warehouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SKLAD.Designer.cs">
-      <DependentUpon>SKLAD.cs</DependentUpon>
+    <Compile Include="Warehouse.Designer.cs">
+      <DependentUpon>Warehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sostav_bluda.cs">
+    <Compile Include="DishIngredients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sostav_bluda.Designer.cs">
-      <DependentUpon>Sostav_bluda.cs</DependentUpon>
+    <Compile Include="DishIngredients.Designer.cs">
+      <DependentUpon>DishIngredients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sotrudniki.cs">
+    <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sotrudniki.Designer.cs">
-      <DependentUpon>Sotrudniki.cs</DependentUpon>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpisokPlan.cs">
+    <Compile Include="PlanningList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpisokPlan.Designer.cs">
-      <DependentUpon>SpisokPlan.cs</DependentUpon>
+    <Compile Include="PlanningList.Designer.cs">
+      <DependentUpon>PlanningList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zakaz.cs">
+    <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Zakaz.Designer.cs">
-      <DependentUpon>Zakaz.cs</DependentUpon>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zakazat.cs">
+    <Compile Include="AddEditOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Zakazat.Designer.cs">
-      <DependentUpon>Zakazat.cs</DependentUpon>
+    <Compile Include="AddEditOrder.Designer.cs">
+      <DependentUpon>AddEditOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zakaz_postav.cs">
+    <Compile Include="OrdersToSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Zakaz_postav.Designer.cs">
-      <DependentUpon>Zakaz_postav.cs</DependentUpon>
+    <Compile Include="OrdersToSuppliers.Designer.cs">
+      <DependentUpon>OrdersToSuppliers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ADD_Kontragent.resx">
-      <DependentUpon>ADD_Kontragent.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditPartner.resx">
+      <DependentUpon>AddEditPartner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add_Sotrudnik.resx">
-      <DependentUpon>Add_Sotrudnik.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditEmployee.resx">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Avtorization.resx">
       <DependentUpon>Avtorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bluda.resx">
-      <DependentUpon>Bluda.cs</DependentUpon>
+    <EmbeddedResource Include="Dishes.resx">
+      <DependentUpon>Dishes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cena_producta.resx">
-      <DependentUpon>Cena_producta.cs</DependentUpon>
+    <EmbeddedResource Include="ProductPrice.resx">
+      <DependentUpon>ProductPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dannie.resx">
       <DependentUpon>Dannie.cs</DependentUpon>
@@ -301,56 +302,56 @@
     <EmbeddedResource Include="DateTimePicker.resx">
       <DependentUpon>DateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doc_Postuplenie.resx">
-      <DependentUpon>Doc_Postuplenie.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsReceipt.resx">
+      <DependentUpon>ProductsReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edinica.resx">
-      <DependentUpon>Edinica.cs</DependentUpon>
+    <EmbeddedResource Include="Measure.resx">
+      <DependentUpon>Measure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AdminStartPage.resx">
+      <DependentUpon>AdminStartPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupp_Blud.resx">
-      <DependentUpon>Grupp_Blud.cs</DependentUpon>
+    <EmbeddedResource Include="DishGroups.resx">
+      <DependentUpon>DishGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kalculiac.resx">
-      <DependentUpon>Kalculiac.cs</DependentUpon>
+    <EmbeddedResource Include="Calculation.resx">
+      <DependentUpon>Calculation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KALIK.resx">
-      <DependentUpon>KALIK.cs</DependentUpon>
+    <EmbeddedResource Include="DishesCalculationPage.resx">
+      <DependentUpon>DishesCalculationPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kontragent.resx">
-      <DependentUpon>Kontragent.cs</DependentUpon>
+    <EmbeddedResource Include="Partners.resx">
+      <DependentUpon>Partners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planirovanie.resx">
-      <DependentUpon>Planirovanie.cs</DependentUpon>
+    <EmbeddedResource Include="Planning.resx">
+      <DependentUpon>Planning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Min_plateg.resx">
-      <DependentUpon>Min_plateg.cs</DependentUpon>
+    <EmbeddedResource Include="PaymentToSuppliers.resx">
+      <DependentUpon>PaymentToSuppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Min_zakaz.resx">
-      <DependentUpon>Min_zakaz.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditOrderToSuppliers.resx">
+      <DependentUpon>AddEditOrderToSuppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Oplata_zakaza.resx">
-      <DependentUpon>Oplata_zakaza.cs</DependentUpon>
+    <EmbeddedResource Include="OrderPayment.resx">
+      <DependentUpon>OrderPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ostatok.resx">
-      <DependentUpon>Ostatok.cs</DependentUpon>
+    <EmbeddedResource Include="Balance.resx">
+      <DependentUpon>Balance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otchet_1_Kal.resx">
-      <DependentUpon>Otchet_1_Kal.cs</DependentUpon>
+    <EmbeddedResource Include="ReportCalculation.resx">
+      <DependentUpon>ReportCalculation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otchet_po_zakazam_p.resx">
-      <DependentUpon>Otchet_po_zakazam_p.cs</DependentUpon>
+    <EmbeddedResource Include="ReportOrders.resx">
+      <DependentUpon>ReportOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Min_planirovanie.resx">
-      <DependentUpon>Min_planirovanie.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditPlanning.resx">
+      <DependentUpon>AddEditPlanning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Polzovatel.resx">
-      <DependentUpon>Polzovatel.cs</DependentUpon>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Postuplenie_producta.resx">
-      <DependentUpon>Postuplenie_producta.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditProductReceipt.resx">
+      <DependentUpon>AddEditProductReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
@@ -366,26 +367,26 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="SKLAD.resx">
-      <DependentUpon>SKLAD.cs</DependentUpon>
+    <EmbeddedResource Include="Warehouse.resx">
+      <DependentUpon>Warehouse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sostav_bluda.resx">
-      <DependentUpon>Sostav_bluda.cs</DependentUpon>
+    <EmbeddedResource Include="DishIngredients.resx">
+      <DependentUpon>DishIngredients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sotrudniki.resx">
-      <DependentUpon>Sotrudniki.cs</DependentUpon>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpisokPlan.resx">
-      <DependentUpon>SpisokPlan.cs</DependentUpon>
+    <EmbeddedResource Include="PlanningList.resx">
+      <DependentUpon>PlanningList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Zakaz.resx">
-      <DependentUpon>Zakaz.cs</DependentUpon>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Zakazat.resx">
-      <DependentUpon>Zakazat.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditOrder.resx">
+      <DependentUpon>AddEditOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Zakaz_postav.resx">
-      <DependentUpon>Zakaz_postav.cs</DependentUpon>
+    <EmbeddedResource Include="OrdersToSuppliers.resx">
+      <DependentUpon>OrdersToSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1_for_otchet.xsc">
       <DependentUpon>DataSet1_for_otchet.xsd</DependentUpon>
