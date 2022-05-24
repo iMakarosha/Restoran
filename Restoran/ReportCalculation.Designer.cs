@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportCalculation));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDOtchet1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDocBludoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bludoDocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.restoranDataSet = new Restoran.RestoranDataSet();
-            this.dataDataGridViewTextBoxColumn = new RustemSoft.DataGridViewColumns.DataGridViewDateTimePickerColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otchet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bludo_DocTableAdapter = new Restoran.RestoranDataSetTableAdapters.Bludo_DocTableAdapter();
@@ -126,9 +127,9 @@
             // dataDataGridViewTextBoxColumn
             // 
             this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.DateTimeDisplayFormat = RustemSoft.DataGridViewColumns.DateTimeStencils.MMDDYYYY;
-            this.dataDataGridViewTextBoxColumn.DateTimeEditFormat = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataDataGridViewTextBoxColumn.DelimiterChar = "/";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = System.DateTime.Now;
+            this.dataDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataDataGridViewTextBoxColumn.HeaderText = "Дата отчета";
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             this.dataDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -349,7 +350,7 @@
         private System.Windows.Forms.BindingSource bludoDocBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDOtchet1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn iDDocBludoDataGridViewTextBoxColumn;
-        private RustemSoft.DataGridViewColumns.DataGridViewDateTimePickerColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numerDataGridViewTextBoxColumn;
     }
 }

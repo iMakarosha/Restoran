@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditProductReceipt));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDPostupleniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +49,7 @@
             this.Id_NDC = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.nDCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Summa_NDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.srokgodnostiDataGridViewTextBoxColumn = new RustemSoft.DataGridViewColumns.DataGridViewDateTimePickerColumn();
+            this.srokgodnostiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postuplenieproductaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postuplenie_productaTableAdapter = new Restoran.RestoranDataSetTableAdapters.Postuplenie_productaTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -244,9 +245,9 @@
             // srokgodnostiDataGridViewTextBoxColumn
             // 
             this.srokgodnostiDataGridViewTextBoxColumn.DataPropertyName = "Srok_godnosti";
-            this.srokgodnostiDataGridViewTextBoxColumn.DateTimeDisplayFormat = RustemSoft.DataGridViewColumns.DateTimeStencils.MMDDYYYY;
-            this.srokgodnostiDataGridViewTextBoxColumn.DateTimeEditFormat = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.srokgodnostiDataGridViewTextBoxColumn.DelimiterChar = "/";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle5.NullValue = System.DateTime.Now;
+            this.srokgodnostiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.srokgodnostiDataGridViewTextBoxColumn.HeaderText = "Срок годности";
             this.srokgodnostiDataGridViewTextBoxColumn.Name = "srokgodnostiDataGridViewTextBoxColumn";
             this.srokgodnostiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -639,6 +640,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn summaKolCenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Id_NDC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Summa_NDC;
-        private RustemSoft.DataGridViewColumns.DataGridViewDateTimePickerColumn srokgodnostiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srokgodnostiDataGridViewTextBoxColumn;
     }
 }

@@ -52,17 +52,13 @@ namespace Restoran
                     this.sotrudnikiBindingSource.EndEdit();
                     this.sotrudnikiTableAdapter.Update(this.restoranDataSet.Sotrudniki);
 
-                    int id = 0;
-                    for (int i = dataGridView1.RowCount; i > 0; i--)
-                    {
-                        id = i;
-                        break;
-                    }
                     DataRow rowB = restoranDataSet.Tables["Avtorization"].NewRow();
 
                     rowB["ID_Dolgnost"] = comboBox1.SelectedValue;
                     rowB["Parol"] = textBox2.Text;
-                    rowB["ID_Sotrudniki"] = id;
+
+                    string sql = "select top 1 ID_Sotrudniki from Sotrudniki order by ID_Sotrudniki desc";
+                    rowB["ID_Sotrudniki"] = Convert.ToInt32(new Handlers.SqlConnectionHandler().GetQueryResult(sql));
 
                     restoranDataSet.Tables["Avtorization"].Rows.Add(rowB);
 
