@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditOrder));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,8 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summazakazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numstolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotrudnikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentZakazzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.restoranDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.document_ZakazzTableAdapter = new Restoran.RestoranDataSetTableAdapters.Document_ZakazzTableAdapter();
@@ -188,9 +190,9 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Cena_Bluda";
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn7.HeaderText = "Цена блюда";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -205,9 +207,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Summa_Kol_cen";
-            dataGridViewCellStyle16.Format = "N2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn9.HeaderText = "Сумма";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -353,7 +355,7 @@
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(831, 45);
+            this.bindingNavigator1.Location = new System.Drawing.Point(1187, 45);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
@@ -382,12 +384,14 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
             this.dataDataGridViewTextBoxColumn,
-            this.summazakazaDataGridViewTextBoxColumn});
+            this.summazakazaDataGridViewTextBoxColumn,
+            this.numstolaDataGridViewTextBoxColumn,
+            this.sotrudnikidDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.documentZakazzBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(305, 449);
+            this.dataGridView3.Location = new System.Drawing.Point(312, 296);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(350, 115);
+            this.dataGridView3.Size = new System.Drawing.Size(292, 115);
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.Visible = false;
             // 
@@ -411,6 +415,20 @@
             this.summazakazaDataGridViewTextBoxColumn.HeaderText = "Summa_zakaza";
             this.summazakazaDataGridViewTextBoxColumn.Name = "summazakazaDataGridViewTextBoxColumn";
             this.summazakazaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numstolaDataGridViewTextBoxColumn
+            // 
+            this.numstolaDataGridViewTextBoxColumn.DataPropertyName = "Num_stola";
+            this.numstolaDataGridViewTextBoxColumn.HeaderText = "Номер стола";
+            this.numstolaDataGridViewTextBoxColumn.Name = "numstolaDataGridViewTextBoxColumn";
+            this.numstolaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sotrudnikidDataGridViewTextBoxColumn
+            // 
+            this.sotrudnikidDataGridViewTextBoxColumn.DataPropertyName = "ID_Sotrudniki";
+            this.sotrudnikidDataGridViewTextBoxColumn.HeaderText = "id ofitsiant";
+            this.sotrudnikidDataGridViewTextBoxColumn.Name = "sotrudnikidDataGridViewTextBoxColumn";
+            this.sotrudnikidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentZakazzBindingSource
             // 
@@ -566,7 +584,7 @@
             this.summaDataGridViewTextBoxColumn,
             this.nettoDataGridViewTextBoxColumn});
             this.dataGridView4.DataSource = this.kalkuliacBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(12, 440);
+            this.dataGridView4.Location = new System.Drawing.Point(12, 452);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(773, 145);
@@ -667,12 +685,12 @@
             // 
             // cbOfitsiant
             // 
+            this.cbOfitsiant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOfitsiant.FormattingEnabled = true;
             this.cbOfitsiant.Location = new System.Drawing.Point(93, 41);
             this.cbOfitsiant.Name = "cbOfitsiant";
             this.cbOfitsiant.Size = new System.Drawing.Size(368, 21);
             this.cbOfitsiant.TabIndex = 17;
-            this.cbOfitsiant.Text = "System.Data.DataViewManagerListItemTypeDescriptor";
             this.cbOfitsiant.SelectedIndexChanged += new System.EventHandler(this.cbOfitsiant_SelectedIndexChanged);
             // 
             // label7
@@ -779,6 +797,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn summazakazaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numstolaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sotrudnikidDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem открытьКалькуляциюToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView5;

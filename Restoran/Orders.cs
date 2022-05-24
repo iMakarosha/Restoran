@@ -60,12 +60,11 @@ namespace Restoran
             Zakazat.ID_Zakaz = r;
             Zakazat.button1.Text = "Сохранить";
             Zakazat.Text = "Редактировать заказ";
-            string queryStr = "select Sotrudnik from Document_Zakazz, " +
-                "Sotrudniki where Sotrudniki.ID_Sotrudniki = Document_Zakazz.ID_Sotrudniki and ID_Documenta_zakaz = " + r;
 
-            var result = new Handlers.SqlConnectionHandler().GetQueryResult(queryStr);
-            Zakazat.cbOfitsiant.SelectedText = result.ToString();
-
+            if (dataGridView1[4, CurrentRow].Value.ToString() != null)
+                Zakazat.cbOfitsiant.SelectedValue = dataGridView1[4, CurrentRow].Value.ToString();
+            else
+                Zakazat.cbOfitsiant.SelectedIndex = -1;
 
             Zakazat.Show();
         }

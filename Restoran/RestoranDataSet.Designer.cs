@@ -18066,9 +18066,200 @@ SELECT ID_Documenta_zakaz, Data, Summa_zakaza, ID_Sotrudniki, Num_stola FROM Doc
         {
             return this.Adapter.Update(dataTable);
         }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(RestoranDataSet dataSet)
+        {
+            return this.Adapter.Update(dataSet, "Document_Zakazz");
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow)
+        {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows)
+        {
+            return this.Adapter.Update(dataRows);
+        }
+
+        //todo from this
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza)
+        {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Documenta_zakaz));
+            if ((Original_Data.HasValue == true))
+            {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Data.Value));
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Summa_zakaza.HasValue == true))
+            {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_Summa_zakaza.Value));
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open)
+                        != global::System.Data.ConnectionState.Open))
+            {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try
+            {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally
+            {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed))
+                {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza)
+        {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
+            if ((Data.HasValue == true))
+            {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Summa_zakaza.HasValue == true))
+            {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Summa_zakaza.Value));
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open)
+                        != global::System.Data.ConnectionState.Open))
+            {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try
+            {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally
+            {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed))
+                {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza, global::System.Nullable<int> ID_Sotrudniki, global::System.Nullable<int> Num_stola, int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza, global::System.Nullable<int> Original_ID_Sotrudniki, global::System.Nullable<int> Original_Num_stola)
+        {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
+            if ((Data.HasValue == true))
+            {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Summa_zakaza.HasValue == true))
+            {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Summa_zakaza.Value));
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_Documenta_zakaz));
+            if ((Original_Data.HasValue == true))
+            {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Data.Value));
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Summa_zakaza.HasValue == true))
+            {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_Summa_zakaza.Value));
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open)
+                        != global::System.Data.ConnectionState.Open))
+            {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try
+            {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally
+            {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed))
+                {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza, global::System.Nullable<int> ID_Sotrudniki, global::System.Nullable<int> Num_stola, int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza, global::System.Nullable<int> Original_ID_Sotrudniki, global::System.Nullable<int> Original_Num_stola)
+        {
+            return this.Update(Original_ID_Documenta_zakaz, Data, Summa_zakaza, ID_Sotrudniki, Num_stola, Original_ID_Documenta_zakaz, Original_Data, Original_Summa_zakaza, Original_ID_Sotrudniki, Original_Num_stola);
+        }
+
+        //todo to this
     }
 
-    
+
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>

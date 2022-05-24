@@ -30,6 +30,7 @@ namespace Restoran
                 cbOfitsiant.DataSource = (new Handlers.SqlConnectionHandler().GetDataSet(dolgnost)).Tables[0];
                 cbOfitsiant.DisplayMember = "Sotrudnik";
                 cbOfitsiant.ValueMember = "ID_Sotrudniki";
+                cbOfitsiant.SelectedItem = cbOfitsiant.Items[0];
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -43,6 +44,7 @@ namespace Restoran
 
         private void Zakazat_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
@@ -312,53 +314,69 @@ namespace Restoran
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
+            try
             {
-                restoranDataSet.Tables["Document_Zakazz"].Rows.Add();
-                this.Validate();
-                this.documentZakazzBindingSource.EndEdit();
-                this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+                if (button1.Text == "Добавить")
+                {
+                    restoranDataSet.Tables["Document_Zakazz"].Rows.Add();
+                    this.Validate();
+                    this.documentZakazzBindingSource.EndEdit();
+                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
 
-                this.Validate();
-                this.zakazBindingSource.EndEdit();
-                this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
+                    this.Validate();
+                    this.zakazBindingSource.EndEdit();
+                    this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
 
-                dataGridView3[1, ID_str_Zakaz - 1].Value = dateTimePicker1.Text;
-                dataGridView3[2, ID_str_Zakaz - 1].Value = Convert.ToDecimal(label3.Text);
+                    dataGridView3[1, ID_str_Zakaz - 1].Value = dateTimePicker1.Text;
+                    dataGridView3[2, ID_str_Zakaz - 1].Value = Convert.ToDecimal(label3.Text);
 
-                this.Validate();
-                this.documentZakazzBindingSource.EndEdit();
-                this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+                    this.Validate();
+                    this.documentZakazzBindingSource.EndEdit();
+                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
 
-                this.Validate();
-                this.kalkuliacBindingSource.EndEdit();
-                this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
+                    this.Validate();
+                    this.kalkuliacBindingSource.EndEdit();
+                    this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
 
-                MessageBox.Show("Заказ добавлен!");
-                Close();
+                    MessageBox.Show("Заказ добавлен!");
+                    Close();
 
+                }
+                else if (button1.Text == "Сохранить")
+                {
+                    this.Validate();
+                    this.zakazBindingSource.EndEdit();
+                    this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
+
+                    dataGridView3[1, ID_str_Zakaz].Value = dateTimePicker1.Text;
+                    dataGridView3[2, ID_str_Zakaz].Value = Convert.ToDecimal(label3.Text);
+                
+                    dataGridView3[3, ID_str_Zakaz].Value = Convert.ToInt32(tbNumTable.Text);
+
+                    if (cbOfitsiant.SelectedIndex > -1) 
+                    {
+                        dataGridView3[4, ID_str_Zakaz].Value = Convert.ToInt32(cbOfitsiant.SelectedIndex);
+                    }
+                    else
+                    {
+                        dataGridView3[4, ID_str_Zakaz].Value = null;
+                    }
+
+                    this.Validate();
+                    this.documentZakazzBindingSource.EndEdit();
+                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+
+                    this.Validate();
+                    this.kalkuliacBindingSource.EndEdit();
+                    this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
+
+                    MessageBox.Show("Заказ сохранен!");
+
+                    Close();
+                }
             }
-            else if (button1.Text == "Сохранить")
-            {
-                this.Validate();
-                this.zakazBindingSource.EndEdit();
-                this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-                dataGridView3[1, ID_str_Zakaz].Value = dateTimePicker1.Text;
-                dataGridView3[2, ID_str_Zakaz].Value = Convert.ToDecimal(label3.Text);
-
-                this.Validate();
-                this.documentZakazzBindingSource.EndEdit();
-                this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
-
-                this.Validate();
-                this.kalkuliacBindingSource.EndEdit();
-                this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
-
-                MessageBox.Show("Заказ сохранен!");
-
-                Close();
-            }
         }
 
         private void Zakazat_Activated(object sender, EventArgs e)
@@ -484,5 +502,6 @@ namespace Restoran
         {
 
         }
+
     }
 }

@@ -35,6 +35,7 @@
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summazakazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numstolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotrudnikidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentZakazzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.restoranDataSet = new Restoran.RestoranDataSet();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -87,7 +88,8 @@
             this.iDDocumentazakazDataGridViewTextBoxColumn,
             this.dataDataGridViewTextBoxColumn,
             this.summazakazaDataGridViewTextBoxColumn,
-            this.numstolaDataGridViewTextBoxColumn});
+            this.numstolaDataGridViewTextBoxColumn,
+            this.sotrudnikidDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.documentZakazzBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(12, 37);
@@ -129,6 +131,14 @@
             this.numstolaDataGridViewTextBoxColumn.Name = "numstolaDataGridViewTextBoxColumn";
             this.numstolaDataGridViewTextBoxColumn.ReadOnly = true;
             this.numstolaDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // sotrudnikidDataGridViewTextBoxColumn
+            // 
+            this.sotrudnikidDataGridViewTextBoxColumn.DataPropertyName = "ID_Sotrudniki";
+            this.sotrudnikidDataGridViewTextBoxColumn.HeaderText = "id ofitsiant";
+            this.sotrudnikidDataGridViewTextBoxColumn.Name = "sotrudnikidDataGridViewTextBoxColumn";
+            this.sotrudnikidDataGridViewTextBoxColumn.Visible = false;
+            this.sotrudnikidDataGridViewTextBoxColumn.Width = 60;
             // 
             // documentZakazzBindingSource
             // 
@@ -393,7 +403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn summazakazaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numstolaDataGridViewTextBoxColumn;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn sotrudnikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sotrudnikidDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource kalkuliacBindingSource;
         private RestoranDataSetTableAdapters.KalkuliacTableAdapter kalkuliacTableAdapter;
         private System.Windows.Forms.BindingSource zakazBindingSource;
