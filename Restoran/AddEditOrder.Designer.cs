@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditOrder));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,12 @@
             this.kalkuliacBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kalkuliacTableAdapter = new Restoran.RestoranDataSetTableAdapters.KalkuliacTableAdapter();
             this.bludo_DocTableAdapter = new Restoran.RestoranDataSetTableAdapters.Bludo_DocTableAdapter();
+            this.tbNumTable = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbOfitsiant = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.sotrudnikiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sotrudnikiTableAdapter = new Restoran.RestoranDataSetTableAdapters.SotrudnikiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bludoDocBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoranDataSet)).BeginInit();
@@ -109,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.postuplenieproductaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalkuliacBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sotrudnikiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -130,10 +137,10 @@
             this.dataGridViewTextBoxColumn9});
             this.dataGridView1.DataSource = this.zakazBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(224, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(224, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(555, 335);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGridView1_CellContextMenuStripNeeded);
             this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
@@ -181,9 +188,9 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Cena_Bluda";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn7.HeaderText = "Цена блюда";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -198,9 +205,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Summa_Kol_cen";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn9.HeaderText = "Сумма";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -226,11 +233,11 @@
             this.nacenkaDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.bludoDocBindingSource;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 102);
+            this.dataGridView2.Location = new System.Drawing.Point(15, 119);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(195, 281);
+            this.dataGridView2.Size = new System.Drawing.Size(195, 306);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             // 
@@ -272,7 +279,7 @@
             this.comboBox1.DisplayMember = "Naimenovanie";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 73);
+            this.comboBox1.Location = new System.Drawing.Point(15, 90);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(195, 21);
             this.comboBox1.TabIndex = 2;
@@ -287,7 +294,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 57);
+            this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 3;
@@ -295,15 +302,15 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(93, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Location = new System.Drawing.Point(12, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 5;
@@ -313,7 +320,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(699, 9);
+            this.label3.Location = new System.Drawing.Point(700, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 6;
@@ -329,7 +336,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(321, 13);
+            this.button1.Location = new System.Drawing.Point(686, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 7;
@@ -346,14 +353,14 @@
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(599, 45);
+            this.bindingNavigator1.Location = new System.Drawing.Point(831, 45);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
             this.bindingNavigator1.MoveNextItem = null;
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(184, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(175, 25);
             this.bindingNavigator1.TabIndex = 8;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -362,7 +369,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(163, 22);
             this.toolStripButton2.Text = "Удалить блюдо из заказа";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -377,7 +384,7 @@
             this.dataDataGridViewTextBoxColumn,
             this.summazakazaDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.documentZakazzBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(305, 405);
+            this.dataGridView3.Location = new System.Drawing.Point(305, 449);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(350, 115);
@@ -424,12 +431,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьКалькуляциюToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 26);
             // 
             // открытьКалькуляциюToolStripMenuItem
             // 
             this.открытьКалькуляциюToolStripMenuItem.Name = "открытьКалькуляциюToolStripMenuItem";
-            this.открытьКалькуляциюToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.открытьКалькуляциюToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.открытьКалькуляциюToolStripMenuItem.Text = "Открыть калькуляцию";
             this.открытьКалькуляциюToolStripMenuItem.Click += new System.EventHandler(this.открытьКалькуляциюToolStripMenuItem_Click);
             // 
@@ -534,7 +541,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(565, 9);
+            this.label5.Location = new System.Drawing.Point(566, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 13;
@@ -559,7 +566,7 @@
             this.summaDataGridViewTextBoxColumn,
             this.nettoDataGridViewTextBoxColumn});
             this.dataGridView4.DataSource = this.kalkuliacBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(12, 400);
+            this.dataGridView4.Location = new System.Drawing.Point(12, 440);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(773, 145);
@@ -642,12 +649,60 @@
             // 
             this.bludo_DocTableAdapter.ClearBeforeFill = true;
             // 
+            // tbNumTable
+            // 
+            this.tbNumTable.Location = new System.Drawing.Point(361, 10);
+            this.tbNumTable.Name = "tbNumTable";
+            this.tbNumTable.Size = new System.Drawing.Size(100, 20);
+            this.tbNumTable.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(280, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Номер стола:";
+            // 
+            // cbOfitsiant
+            // 
+            this.cbOfitsiant.FormattingEnabled = true;
+            this.cbOfitsiant.Location = new System.Drawing.Point(93, 41);
+            this.cbOfitsiant.Name = "cbOfitsiant";
+            this.cbOfitsiant.Size = new System.Drawing.Size(368, 21);
+            this.cbOfitsiant.TabIndex = 17;
+            this.cbOfitsiant.Text = "System.Data.DataViewManagerListItemTypeDescriptor";
+            this.cbOfitsiant.SelectedIndexChanged += new System.EventHandler(this.cbOfitsiant_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Официант:";
+            // 
+            // sotrudnikiBindingSource
+            // 
+            this.sotrudnikiBindingSource.DataMember = "Sotrudniki";
+            this.sotrudnikiBindingSource.DataSource = this.restoranDataSetBindingSource;
+            // 
+            // sotrudnikiTableAdapter
+            // 
+            this.sotrudnikiTableAdapter.ClearBeforeFill = true;
+            // 
             // AddEditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(799, 395);
+            this.ClientSize = new System.Drawing.Size(799, 435);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbOfitsiant);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbNumTable);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -684,6 +739,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.postuplenieproductaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalkuliacBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sotrudnikiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,5 +818,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        public System.Windows.Forms.TextBox tbNumTable;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox cbOfitsiant;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource sotrudnikiBindingSource;
+        private RestoranDataSetTableAdapters.SotrudnikiTableAdapter sotrudnikiTableAdapter;
     }
 }

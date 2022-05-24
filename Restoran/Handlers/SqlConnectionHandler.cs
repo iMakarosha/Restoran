@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -65,6 +66,20 @@ namespace Restoran.Handlers
 
                 conn.Close();
             }
+        }
+
+        public DataSet GetDataSet(string str)
+        {
+            SqlConnection conn = new Handlers.SqlConnectionHandler().GetConnection();
+            SqlCommand MyCommand = new SqlCommand(str, conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(MyCommand);
+
+            DataSet ds = new DataSet();
+            conn.Open();
+            dataAdapter.Fill(ds);
+            conn.Close();
+
+            return ds;
         }
     }
 }

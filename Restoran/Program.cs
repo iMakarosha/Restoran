@@ -17,7 +17,7 @@ namespace Restoran
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Avtorization());
+                Application.Run(new Orders());
             }
         }
     }

@@ -23,12 +23,28 @@ namespace Restoran
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Short;
 
-            string queryStr = "select top 1 ID_Documenta_zakaz from Document_Zakazz order by ID_Documenta_zakaz desc";
-            this.ID_Zakaz = Convert.ToInt32(new Handlers.SqlConnectionHandler().GetQueryResult(queryStr)) + 1;
+            try
+            {
+                string dolgnost = "SELECT Sotrudniki.ID_Sotrudniki, Sotrudnik FROM Sotrudniki, Avtorization " +
+                    "where Sotrudniki.ID_Sotrudniki = Avtorization.ID_Sotrudniki and ID_Dolgnost = 2";
+                cbOfitsiant.DataSource = (new Handlers.SqlConnectionHandler().GetDataSet(dolgnost)).Tables[0];
+                cbOfitsiant.DisplayMember = "Sotrudnik";
+                cbOfitsiant.ValueMember = "ID_Sotrudniki";
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            string queryStr = "select top 1 ID_Documenta_zakaz from Document_Zakazz " +
+                " order by ID_Documenta_zakaz desc";
+
+            var result = new Handlers.SqlConnectionHandler().GetQueryResultList(queryStr);
+            System.Array x = ((System.Array)(result[0]));  //приводим к типу System.Array
+            this.ID_Zakaz = Convert.ToInt32(x.GetValue(0)) + 1; 
         }
 
         private void Zakazat_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
+            this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kalkuliac". При необходимости она может быть перемещена или удалена.
@@ -449,6 +465,24 @@ namespace Restoran
             Calculation Kalculiac = new Calculation();
             Kalculiac.ID_Zakaz = (int)r;
             Kalculiac.Show();
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void cbOfitsiant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

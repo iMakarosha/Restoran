@@ -53,12 +53,19 @@ namespace Restoran
             //  Sostav_bluda.Text = dataGridView1[2, CurrentRow].Value.ToString();
             Zakazat.dateTimePicker1.Text = dataGridView1[1, CurrentRow].Value.ToString();
             Zakazat.label3.Text = dataGridView1[2, CurrentRow].Value.ToString();
+            Zakazat.tbNumTable.Text = dataGridView1[3, CurrentRow].Value.ToString();
 
             //строка сохранения
             Zakazat.ID_str_Zakaz = CurrentRow;
             Zakazat.ID_Zakaz = r;
             Zakazat.button1.Text = "Сохранить";
             Zakazat.Text = "Редактировать заказ";
+            string queryStr = "select Sotrudnik from Document_Zakazz, " +
+                "Sotrudniki where Sotrudniki.ID_Sotrudniki = Document_Zakazz.ID_Sotrudniki and ID_Documenta_zakaz = " + r;
+
+            var result = new Handlers.SqlConnectionHandler().GetQueryResult(queryStr);
+            Zakazat.cbOfitsiant.SelectedText = result.ToString();
+
 
             Zakazat.Show();
         }

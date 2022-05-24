@@ -136,6 +136,8 @@ namespace Restoran {
         
         private global::System.Data.DataRelation relationFK_Zakaz_postav_ToTable;
         
+        private global::System.Data.DataRelation relationFK_Document_Zakazz_Sotrudniki;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -863,6 +865,7 @@ namespace Restoran {
             this.relationFK_Zakaz_ToTable = this.Relations["FK_Zakaz_ToTable"];
             this.relationFK_Zakaz_ToTable_1 = this.Relations["FK_Zakaz_ToTable_1"];
             this.relationFK_Zakaz_postav_ToTable = this.Relations["FK_Zakaz_postav_ToTable"];
+            this.relationFK_Document_Zakazz_Sotrudniki = this.Relations["FK_Document_Zakazz_Sotrudniki"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1047,6 +1050,10 @@ namespace Restoran {
                         this.tableKontragent.ID_KontragentColumn}, new global::System.Data.DataColumn[] {
                         this.tableZakaz_postav.ID_KontragentColumn}, false);
             this.Relations.Add(this.relationFK_Zakaz_postav_ToTable);
+            this.relationFK_Document_Zakazz_Sotrudniki = new global::System.Data.DataRelation("FK_Document_Zakazz_Sotrudniki", new global::System.Data.DataColumn[] {
+                        this.tableSotrudniki.ID_SotrudnikiColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDocument_Zakazz.ID_SotrudnikiColumn}, false);
+            this.Relations.Add(this.relationFK_Document_Zakazz_Sotrudniki);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3006,6 +3013,10 @@ namespace Restoran {
             
             private global::System.Data.DataColumn columnSumma_zakaza;
             
+            private global::System.Data.DataColumn columnNum_stola;
+            
+            private global::System.Data.DataColumn columnID_Sotrudniki;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Document_ZakazzDataTable() {
@@ -3065,6 +3076,22 @@ namespace Restoran {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Num_stolaColumn {
+                get {
+                    return this.columnNum_stola;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_SotrudnikiColumn {
+                get {
+                    return this.columnID_Sotrudniki;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3100,12 +3127,17 @@ namespace Restoran {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Document_ZakazzRow AddDocument_ZakazzRow(System.DateTime Data, decimal Summa_zakaza) {
+            public Document_ZakazzRow AddDocument_ZakazzRow(System.DateTime Data, decimal Summa_zakaza, int Num_stola, SotrudnikiRow parentSotrudnikiRowByFK_Document_Zakazz_Sotrudniki) {
                 Document_ZakazzRow rowDocument_ZakazzRow = ((Document_ZakazzRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Data,
-                        Summa_zakaza};
+                        Summa_zakaza,
+                        Num_stola,
+                        null};
+                if ((parentSotrudnikiRowByFK_Document_Zakazz_Sotrudniki != null)) {
+                    columnValuesArray[4] = parentSotrudnikiRowByFK_Document_Zakazz_Sotrudniki[0];
+                }
                 rowDocument_ZakazzRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDocument_ZakazzRow);
                 return rowDocument_ZakazzRow;
@@ -3138,6 +3170,8 @@ namespace Restoran {
                 this.columnID_Documenta_zakaz = base.Columns["ID_Documenta_zakaz"];
                 this.columnData = base.Columns["Data"];
                 this.columnSumma_zakaza = base.Columns["Summa_zakaza"];
+                this.columnNum_stola = base.Columns["Num_stola"];
+                this.columnID_Sotrudniki = base.Columns["ID_Sotrudniki"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3149,6 +3183,10 @@ namespace Restoran {
                 base.Columns.Add(this.columnData);
                 this.columnSumma_zakaza = new global::System.Data.DataColumn("Summa_zakaza", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSumma_zakaza);
+                this.columnNum_stola = new global::System.Data.DataColumn("Num_stola", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNum_stola);
+                this.columnID_Sotrudniki = new global::System.Data.DataColumn("ID_Sotrudniki", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Sotrudniki);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Documenta_zakaz}, true));
                 this.columnID_Documenta_zakaz.AutoIncrement = true;
@@ -10667,6 +10705,49 @@ namespace Restoran {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Num_stola {
+                get {
+                    try {
+                        return ((int)(this[this.tableDocument_Zakazz.Num_stolaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Num_stola\' в таблице \'Document_Zakazz\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocument_Zakazz.Num_stolaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_Sotrudniki {
+                get {
+                    try {
+                        return ((int)(this[this.tableDocument_Zakazz.ID_SotrudnikiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ID_Sotrudniki\' в таблице \'Document_Zakazz\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocument_Zakazz.ID_SotrudnikiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SotrudnikiRow SotrudnikiRow {
+                get {
+                    return ((SotrudnikiRow)(this.GetParentRow(this.Table.ParentRelations["FK_Document_Zakazz_Sotrudniki"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Document_Zakazz_Sotrudniki"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDataNull() {
                 return this.IsNull(this.tableDocument_Zakazz.DataColumn);
             }
@@ -10687,6 +10768,30 @@ namespace Restoran {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSumma_zakazaNull() {
                 this[this.tableDocument_Zakazz.Summa_zakazaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNum_stolaNull() {
+                return this.IsNull(this.tableDocument_Zakazz.Num_stolaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNum_stolaNull() {
+                this[this.tableDocument_Zakazz.Num_stolaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsID_SotrudnikiNull() {
+                return this.IsNull(this.tableDocument_Zakazz.ID_SotrudnikiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetID_SotrudnikiNull() {
+                this[this.tableDocument_Zakazz.ID_SotrudnikiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14101,6 +14206,17 @@ namespace Restoran {
                 }
                 else {
                     return ((AvtorizationRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Avtorization_ToTable"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Document_ZakazzRow[] GetDocument_ZakazzRows() {
+                if ((this.Table.ChildRelations["FK_Document_Zakazz_Sotrudniki"] == null)) {
+                    return new Document_ZakazzRow[0];
+                }
+                else {
+                    return ((Document_ZakazzRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Document_Zakazz_Sotrudniki"])));
                 }
             }
         }
@@ -17722,7 +17838,7 @@ SELECT ID_Operacia_Postavshik, Data, ID_Kontragent, Summa_Itogo, Id_zakaz_p FROM
             return this.Update(Original_ID_Operacia_Postavshik, Data, ID_Kontragent, Summa_Itogo, Id_zakaz_p, Original_ID_Operacia_Postavshik, Original_Data, Original_ID_Kontragent, Original_Summa_Itogo, Original_Id_zakaz_p);
         }
     }
-    
+
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>
@@ -17732,114 +17848,142 @@ SELECT ID_Operacia_Postavshik, Data, ID_Kontragent, Summa_Itogo, Id_zakaz_p FROM
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Document_ZakazzTableAdapter : global::System.ComponentModel.Component {
-        
+    public partial class Document_ZakazzTableAdapter : global::System.ComponentModel.Component
+    {
+
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
+
         private global::System.Data.SqlClient.SqlConnection _connection;
-        
+
         private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
+
         private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
+
         private bool _clearBeforeFill;
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Document_ZakazzTableAdapter() {
+        public Document_ZakazzTableAdapter()
+        {
             this.ClearBeforeFill = true;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter
+        {
+            get
+            {
+                if ((this._adapter == null))
+                {
                     this.InitAdapter();
                 }
                 return this._adapter;
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
+        internal global::System.Data.SqlClient.SqlConnection Connection
+        {
+            get
+            {
+                if ((this._connection == null))
+                {
                     this.InitConnection();
                 }
                 return this._connection;
             }
-            set {
+            set
+            {
                 this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
+                if ((this.Adapter.InsertCommand != null))
+                {
                     this.Adapter.InsertCommand.Connection = value;
                 }
-                if ((this.Adapter.DeleteCommand != null)) {
+                if ((this.Adapter.DeleteCommand != null))
+                {
                     this.Adapter.DeleteCommand.Connection = value;
                 }
-                if ((this.Adapter.UpdateCommand != null)) {
+                if ((this.Adapter.UpdateCommand != null))
+                {
                     this.Adapter.UpdateCommand.Connection = value;
                 }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1))
+                {
+                    if ((this.CommandCollection[i] != null))
+                    {
                         ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
+        internal global::System.Data.SqlClient.SqlTransaction Transaction
+        {
+            get
+            {
                 return this._transaction;
             }
-            set {
+            set
+            {
                 this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1))
+                {
                     this.CommandCollection[i].Transaction = this._transaction;
                 }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
+                if (((this.Adapter != null)
+                            && (this.Adapter.DeleteCommand != null)))
+                {
                     this.Adapter.DeleteCommand.Transaction = this._transaction;
                 }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
+                if (((this.Adapter != null)
+                            && (this.Adapter.InsertCommand != null)))
+                {
                     this.Adapter.InsertCommand.Transaction = this._transaction;
                 }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
+                if (((this.Adapter != null)
+                            && (this.Adapter.UpdateCommand != null)))
+                {
                     this.Adapter.UpdateCommand.Transaction = this._transaction;
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection
+        {
+            get
+            {
+                if ((this._commandCollection == null))
+                {
                     this.InitCommandCollection();
                 }
                 return this._commandCollection;
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
+        public bool ClearBeforeFill
+        {
+            get
+            {
                 return this._clearBeforeFill;
             }
-            set {
+            set
+            {
                 this._clearBeforeFill = value;
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
+        private void InitAdapter()
+        {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
@@ -17847,242 +17991,83 @@ SELECT ID_Operacia_Postavshik, Data, ID_Kontragent, Summa_Itogo, Id_zakaz_p FROM
             tableMapping.ColumnMappings.Add("ID_Documenta_zakaz", "ID_Documenta_zakaz");
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("Summa_zakaza", "Summa_zakaza");
+            tableMapping.ColumnMappings.Add("Num_stola", "Num_stola");
+            tableMapping.ColumnMappings.Add("ID_Sotrudniki", "ID_Sotrudniki");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Document_Zakazz] WHERE (([ID_Documenta_zakaz] = @Original_ID_Documenta_zakaz) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_Summa_zakaza = 1 AND [Summa_zakaza] IS NULL) OR ([Summa_zakaza] = @Original_Summa_zakaza)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Summa_zakaza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Summa_zakaza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Summa_zakaza", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Summa_zakaza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Document_Zakazz] ([ID_Documenta_zakaz], [Data], [Summa_zakaza]" +
-                ") VALUES (@ID_Documenta_zakaz, @Data, @Summa_zakaza);\r\nSELECT ID_Documenta_zakaz" +
-                ", Data, Summa_zakaza FROM Document_Zakazz WHERE (ID_Documenta_zakaz = @ID_Docume" +
-                "nta_zakaz)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Summa_zakaza", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Summa_zakaza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Document_Zakazz] SET [ID_Documenta_zakaz] = @ID_Documenta_zakaz, [Data] = @Data, [Summa_zakaza] = @Summa_zakaza WHERE (([ID_Documenta_zakaz] = @Original_ID_Documenta_zakaz) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_Summa_zakaza = 1 AND [Summa_zakaza] IS NULL) OR ([Summa_zakaza] = @Original_Summa_zakaza)));
-SELECT ID_Documenta_zakaz, Data, Summa_zakaza FROM Document_Zakazz WHERE (ID_Documenta_zakaz = @ID_Documenta_zakaz)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Summa_zakaza", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Summa_zakaza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Summa_zakaza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Summa_zakaza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Summa_zakaza", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Summa_zakaza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
+        private void InitConnection()
+        {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = global::Restoran.Properties.Settings.Default.RestoranConnectionString;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+        private void InitCommandCollection()
+        {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Documenta_zakaz, Data, Summa_zakaza FROM dbo.Document_Zakazz";
+            this._commandCollection[0].CommandText = "SELECT ID_Documenta_zakaz, Data, Summa_zakaza, ID_Sotrudniki, Num_stola FROM dbo." +
+                "Document_Zakazz";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE [dbo].[Document_Zakazz] SET [ID_Documenta_zakaz] = @ID_Documenta_zakaz, [Data] = @Data, [ID_Sotrudniki] = @ID_Sotrudniki, [Summa_zakaza] = @Summa_zakaza, [Num_stola] = @Num_stola WHERE (([ID_Documenta_zakaz] = @Original_ID_Documenta_zakaz) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_ID_Sotrudniki = 1 AND [ID_Sotrudniki] IS NULL) OR ([ID_Sotrudniki] = @Original_ID_Sotrudniki)) AND ((@IsNull_Summa_Itogo = 1 AND [Summa_zakaza] IS NULL) OR ([Summa_zakaza] = @Original_Summa_Itogo)));
+SELECT ID_Documenta_zakaz, Data, Summa_zakaza, ID_Sotrudniki, Num_stola FROM Document_Zakazz WHERE (ID_Documenta_zakaz = @ID_Documenta_zakaz)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Sotrudniki", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sotrudniki", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Summa_zakaza", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "Summa_zakaza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Num_stola", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Num_stola", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Documenta_zakaz", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Documenta_zakaz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Sotrudniki", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Sotrudniki", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Summa_Itogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RestoranDataSet.Document_ZakazzDataTable dataTable) {
+        public virtual int Fill(RestoranDataSet.Document_ZakazzDataTable dataTable)
+        {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
+            if ((this.ClearBeforeFill == true))
+            {
                 dataTable.Clear();
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RestoranDataSet.Document_ZakazzDataTable GetData() {
+        public virtual RestoranDataSet.Document_ZakazzDataTable GetData()
+        {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             RestoranDataSet.Document_ZakazzDataTable dataTable = new RestoranDataSet.Document_ZakazzDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RestoranDataSet.Document_ZakazzDataTable dataTable) {
+        public virtual int Update(RestoranDataSet.Document_ZakazzDataTable dataTable)
+        {
             return this.Adapter.Update(dataTable);
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RestoranDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Document_Zakazz");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Documenta_zakaz));
-            if ((Original_Data.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Data.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Summa_zakaza.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_Summa_zakaza.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
-            if ((Data.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Summa_zakaza.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Summa_zakaza.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza, int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
-            if ((Data.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Summa_zakaza.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Summa_zakaza.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_Documenta_zakaz));
-            if ((Original_Data.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Data.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Summa_zakaza.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_Summa_zakaza.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Data, global::System.Nullable<decimal> Summa_zakaza, int Original_ID_Documenta_zakaz, global::System.Nullable<global::System.DateTime> Original_Data, global::System.Nullable<decimal> Original_Summa_zakaza) {
-            return this.Update(Original_ID_Documenta_zakaz, Data, Summa_zakaza, Original_ID_Documenta_zakaz, Original_Data, Original_Summa_zakaza);
-        }
     }
+
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -27239,8 +27224,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
         
         private Document_PostuplenieTableAdapter _document_PostuplenieTableAdapter;
         
-        private Document_ZakazzTableAdapter _document_ZakazzTableAdapter;
-        
         private DolgnostTableAdapter _dolgnostTableAdapter;
         
         private Edinica_izmereniaTableAdapter _edinica_izmereniaTableAdapter;
@@ -27361,20 +27344,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
             }
             set {
                 this._document_PostuplenieTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public Document_ZakazzTableAdapter Document_ZakazzTableAdapter {
-            get {
-                return this._document_ZakazzTableAdapter;
-            }
-            set {
-                this._document_ZakazzTableAdapter = value;
             }
         }
         
@@ -27683,10 +27652,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                             && (this._document_PostuplenieTableAdapter.Connection != null))) {
                     return this._document_PostuplenieTableAdapter.Connection;
                 }
-                if (((this._document_ZakazzTableAdapter != null) 
-                            && (this._document_ZakazzTableAdapter.Connection != null))) {
-                    return this._document_ZakazzTableAdapter.Connection;
-                }
                 if (((this._dolgnostTableAdapter != null) 
                             && (this._dolgnostTableAdapter.Connection != null))) {
                     return this._dolgnostTableAdapter.Connection;
@@ -27791,9 +27756,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                 if ((this._document_PostuplenieTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._document_ZakazzTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._dolgnostTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -27880,6 +27842,15 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._sotrudnikiTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sotrudnikiTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._gruppa_bludTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Gruppa_blud.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -27907,30 +27878,12 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sotrudnikiTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sotrudnikiTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._document_PostuplenieTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Document_Postuplenie.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._document_PostuplenieTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._document_ZakazzTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Document_Zakazz.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._document_ZakazzTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28113,6 +28066,14 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._sotrudnikiTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sotrudnikiTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._gruppa_bludTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Gruppa_blud.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -28137,27 +28098,11 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sotrudnikiTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sotrudnikiTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._document_PostuplenieTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Document_Postuplenie.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._document_PostuplenieTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._document_ZakazzTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Document_Zakazz.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._document_ZakazzTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28443,27 +28388,11 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._document_ZakazzTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Document_Zakazz.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._document_ZakazzTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._document_PostuplenieTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Document_Postuplenie.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._document_PostuplenieTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sotrudnikiTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sotrudnikiTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28488,6 +28417,14 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._gruppa_bludTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sotrudnikiTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Sotrudniki.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sotrudnikiTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28568,11 +28505,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
             }
             if (((this._document_PostuplenieTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._document_PostuplenieTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
-            }
-            if (((this._document_ZakazzTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._document_ZakazzTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -28746,15 +28678,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                     if (this._document_PostuplenieTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._document_PostuplenieTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._document_PostuplenieTableAdapter.Adapter);
-                    }
-                }
-                if ((this._document_ZakazzTableAdapter != null)) {
-                    revertConnections.Add(this._document_ZakazzTableAdapter, this._document_ZakazzTableAdapter.Connection);
-                    this._document_ZakazzTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._document_ZakazzTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._document_ZakazzTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._document_ZakazzTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._document_ZakazzTableAdapter.Adapter);
                     }
                 }
                 if ((this._dolgnostTableAdapter != null)) {
@@ -29005,10 +28928,6 @@ SELECT Id_zakaz_p, Data, ID_Kontragent, Summa, Oplata, Postuplenie FROM Zakaz_po
                 if ((this._document_PostuplenieTableAdapter != null)) {
                     this._document_PostuplenieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._document_PostuplenieTableAdapter]));
                     this._document_PostuplenieTableAdapter.Transaction = null;
-                }
-                if ((this._document_ZakazzTableAdapter != null)) {
-                    this._document_ZakazzTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._document_ZakazzTableAdapter]));
-                    this._document_ZakazzTableAdapter.Transaction = null;
                 }
                 if ((this._dolgnostTableAdapter != null)) {
                     this._dolgnostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dolgnostTableAdapter]));
