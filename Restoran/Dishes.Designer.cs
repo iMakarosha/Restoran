@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dishes));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDocBludoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,7 @@
             this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sostavBludaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sostav_BludaTableAdapter = new Restoran.RestoranDataSetTableAdapters.Sostav_BludaTableAdapter();
+            this.toolStripButtonReport = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gruppabludBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoranDataSet)).BeginInit();
@@ -151,9 +152,9 @@
             // nacenkaDataGridViewTextBoxColumn
             // 
             this.nacenkaDataGridViewTextBoxColumn.DataPropertyName = "Nacenka";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.nacenkaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.nacenkaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.nacenkaDataGridViewTextBoxColumn.HeaderText = "% наценки";
             this.nacenkaDataGridViewTextBoxColumn.Name = "nacenkaDataGridViewTextBoxColumn";
             this.nacenkaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -171,7 +172,8 @@
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripButtonReport});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
@@ -387,6 +389,15 @@
             // 
             this.sostav_BludaTableAdapter.ClearBeforeFill = true;
             // 
+            // toolStripButtonReport
+            // 
+            this.toolStripButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReport.Image")));
+            this.toolStripButtonReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonReport.Name = "toolStripButtonReport";
+            this.toolStripButtonReport.Size = new System.Drawing.Size(118, 22);
+            this.toolStripButtonReport.Text = "Отчет по блюду";
+            this.toolStripButtonReport.Click += new System.EventHandler(this.toolStripButtonReport_Click);
+            // 
             // Dishes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,5 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDedinicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cenazakgDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn summaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButtonReport;
     }
 }

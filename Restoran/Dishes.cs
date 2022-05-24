@@ -132,5 +132,19 @@ namespace Restoran
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
+
+        private void toolStripButtonReport_Click(object sender, EventArgs e)
+        {
+            int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+            int r = (int)dataGridView1[0, CurrentRow].Value;
+
+            DishReport Report = new DishReport();
+
+            Report.Text = "Отчет по блюду '" + dataGridView1[2, CurrentRow].Value.ToString() + "'";
+
+            Report.Dish_Id = r;
+
+            Report.Show();
+        }
     }
 }

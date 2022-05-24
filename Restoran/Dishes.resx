@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="bludoDocBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 56</value>
+  </metadata>
   <metadata name="gruppabludBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>677, 17</value>
+  </metadata>
+  <metadata name="gruppabludBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>677, 17</value>
+  </metadata>
+  <metadata name="restoranDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="restoranDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -154,6 +163,25 @@
         bO+G80MFwKUTxgfgcO/b8D9IpXoFiiMDHIQm0skAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="toolStripButtonReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMFSURBVFhHvdhJyE1hHMfx15R5nmdJhgUKZSgiSaYFWQjJ
+        UFYWWCJkKAuJsjIkKSnzWqalhZQxU5KpRBELyvT91n3qdLr3nuece49/fSLO+97ffZ7nPM//nJYc1ROX
+        8AgPC/Jnj6IbGq6+eIy/+ISPBfzELzQlVG8Y6CWmYzTGRBiLcZU/z8Mv9AfH0AO5qjv6ox+GYyu2YCgM
+        2CdCF4Q6DgMFp+BSiKpWOIjneFrhCMm/P4t0HVNg7ccr+Du/wCmcj6gy0Dn4TZym+3iQg9e/gz/v36ei
+        KwZjIE7iNxYhqgx0Bl8xF05frxxctJsRpseRnYFQh5EZyBBtExzqhXC9tEabCF4XaiNCIDnV02AdQWag
+        ybiAqxXuOxdxJfFvWbx+CSw/7BZuIGwZO2FFBVoMb0n3Cqcqr2/wQz9gORyxjmiH9cgdyP/0orOYgIk5
+        eP08vIYf7Ea4EqFWoVAgR8gFV6QGwFvaD9ZnrIG1GoVHyIuLlJvobbzBW/jl7sE7rvAINRLINTMEI+AN
+        8gJP4BHh9P33QMkKZ19TA/mNx2MWZkZyhCzPsaYHcpHegbdztds87TsOwSolkPuHo7MMSzN4jWwzrFIC
+        NVKlBPJAdQo8Ei5H8Lp1sEoJZPN0AuE8qucmvG4TrFKnLNkB1ONdGaqUQB6Ma7ED2yJsx2xYpQSyl7YF
+        tfPzOMjyHvtglRLIhs1fPCySzX9o6rMCeYB71uUOZDtqHzwoUmdY9QJ52NriFJqya/Dkts/J4nV7YdUK
+        5FqzFbEJdIRsCmtWOlAnbMBu7IrkA4FVK5AL32vcs2yX7QpqVjpQI5UM5Aa7Ask1FLYKl0XNSgcahdOw
+        ya+2M6f5jefACoF8wTASB5AMFFXpQD6TO7TuwO7EWdwiFsAKgXxo9FHKJ1UDOf3RVW3KPPE7RGqPUMkR
+        moQ98Fz0QSC6DNRIk58st4uwhgxXqMII+QjtqxSnrAh7Ih+bfSdgKN8tFSoDuT/8QPplU16+1HLNNBTI
+        7vAuXIjVXsnl5frxcTzyHVBLyz9kOLrUqYUH5wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="gruppa_bludTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -175,8 +203,14 @@
   <metadata name="zakazBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>753, 95</value>
   </metadata>
+  <metadata name="zakazBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>753, 95</value>
+  </metadata>
   <metadata name="zakazTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
+  </metadata>
+  <metadata name="sostavBludaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>172, 134</value>
   </metadata>
   <metadata name="sostavBludaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>172, 134</value>
