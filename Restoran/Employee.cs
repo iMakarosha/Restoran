@@ -86,23 +86,22 @@ namespace Restoran
                 try
                 {
                     int CurrentRow = dataGridView2.SelectedCells[0].RowIndex;
-                    int r1 = (int)dataGridView2[0, CurrentRow].Value;
-                    int r2 = (int)dataGridView2[2, CurrentRow].Value;
+                    int r1 = (int)dataGridView2[2, CurrentRow].Value;
 
                     //сотрудники, авторизация
 
                     string sql1 = "Delete from Sotrudniki WHERE ID_Sotrudniki=@ID_Sotrudniki";
 
-                    string sql2 = "Delete from Avtorization WHERE ID_polizovatel=@ID_polizovatel";
+                    string sql2 = "Delete from Avtorization WHERE ID_Sotrudniki=@ID_Sotrudniki";
 
                     using (SqlCommand cmd2 = new SqlCommand(sql2))
                     {
-                        cmd2.Parameters.AddWithValue("@ID_polizovatel", r1);
+                        cmd2.Parameters.AddWithValue("@ID_Sotrudniki", r1);
                         new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd2);
                     }
                     using (SqlCommand cmd1 = new SqlCommand(sql1))
                     {
-                        cmd1.Parameters.AddWithValue("@ID_Sotrudniki", r2);
+                        cmd1.Parameters.AddWithValue("@ID_Sotrudniki", r1);
                         new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd1);
                     }
 

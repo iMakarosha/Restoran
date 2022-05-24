@@ -51,5 +51,22 @@ namespace Restoran
         {
             this.Close();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                VisitLink();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Невозможно открыть сайт по ссылке");
+            }
+        }
+        private void VisitLink()
+        {
+            linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://shpinat.com/");
+        }
     }
 }
