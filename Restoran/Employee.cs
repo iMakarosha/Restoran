@@ -21,11 +21,8 @@ namespace Restoran
 
         private void Sotrudniki_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Dolgnost". При необходимости она может быть перемещена или удалена.
             this.dolgnostTableAdapter.Fill(this.restoranDataSet.Dolgnost);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Avtorization". При необходимости она может быть перемещена или удалена.
             this.avtorizationTableAdapter.Fill(this.restoranDataSet.Avtorization);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
         }
 
@@ -40,8 +37,6 @@ namespace Restoran
             int CurrentRow = dataGridView2.SelectedCells[0].RowIndex;
 
             AddEditEmployee add = new AddEditEmployee();
-            //   int ID_Polsovatel = (int)dataGridView2[0, CurrentRow].Value;
-            //   add.ID_Polsovatel = ID_Polsovatel;
 
             add.button1.Text = "Изменить";
 
@@ -63,8 +58,6 @@ namespace Restoran
             add.ID_dol = (int)Dolgg;
 
             add.Show();
-
-            //   int ID_POST = (int)dataGridView1[0, CurrentRow].Value;
         }
 
         private void Sotrudniki_Activated(object sender, EventArgs e)

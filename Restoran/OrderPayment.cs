@@ -21,11 +21,8 @@ namespace Restoran
 
         private void Oplata_zakaza_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Zakaz_postav". При необходимости она может быть перемещена или удалена.
             this.zakaz_postavTableAdapter.Fill(this.restoranDataSet.Zakaz_postav);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kontragent". При необходимости она может быть перемещена или удалена.
             this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Min_plategnoe_p". При необходимости она может быть перемещена или удалена.
             this.min_plategnoe_pTableAdapter.Fill(this.restoranDataSet.Min_plategnoe_p);
 
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
@@ -121,8 +118,6 @@ namespace Restoran
 
             min.ID_Plateg = r;
 
-            //min.Text = "Заказ поставщику № " + r + " от " + Convert.ToDateTime(dataGridView1[1, CurrentRow].Value).ToString("dd/MM/yyyy");
-
             min.Show();
         }
 
@@ -136,14 +131,6 @@ namespace Restoran
                 using (SqlConnection conn = new Handlers.SqlConnectionHandler().GetConnection())
                 {
                     string sql1 = "Delete from Min_plategnoe_p WHERE ID_plateg=@ID_plateg";
-
-                    //  string sql2 = "Delete from Min_zakaz WHERE Id_zakaz_p=@Id_zakaz_p";
-
-                    //using (SqlCommand cmd2 = new SqlCommand(sql2))
-                    //{
-                    //    cmd2.Parameters.AddWithValue("@Id_zakaz_p", r);
-                    //    new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd2);
-                    //}
 
                     using (SqlCommand cmd1 = new SqlCommand(sql1))
                     {

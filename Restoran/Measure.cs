@@ -19,11 +19,8 @@ namespace Restoran
 
         private void Edinica_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sostav_Bluda". При необходимости она может быть перемещена или удалена.
             this.sostav_BludaTableAdapter.Fill(this.restoranDataSet.Sostav_Bluda);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Postuplenie_producta". При необходимости она может быть перемещена или удалена.
             this.postuplenie_productaTableAdapter.Fill(this.restoranDataSet.Postuplenie_producta);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Edinica_izmerenia". При необходимости она может быть перемещена или удалена.
             this.edinica_izmereniaTableAdapter.Fill(this.restoranDataSet.Edinica_izmerenia);
         }
 

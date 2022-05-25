@@ -20,22 +20,12 @@ namespace Restoran
         }
         private void Bluda_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sostav_Bluda". При необходимости она может быть перемещена или удалена.
             this.sostav_BludaTableAdapter.Fill(this.restoranDataSet.Sostav_Bluda);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Zakaz". При необходимости она может быть перемещена или удалена.
             this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Postuplenie_producta". При необходимости она может быть перемещена или удалена.
             this.postuplenie_productaTableAdapter.Fill(this.restoranDataSet.Postuplenie_producta);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Document_Zakazz". При необходимости она может быть перемещена или удалена.
-            //     this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Document_Postuplenie". При необходимости она может быть перемещена или удалена.
             this.document_PostuplenieTableAdapter.Fill(this.restoranDataSet.Document_Postuplenie);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Gruppa_blud". При необходимости она может быть перемещена или удалена.
             this.gruppa_bludTableAdapter.Fill(this.restoranDataSet.Gruppa_blud);
-
-            //  Image i = Image.
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -60,7 +50,6 @@ namespace Restoran
 
             DishIngredients Sostav_bluda = new DishIngredients();
 
-            //  Sostav_bluda.Text = dataGridView1[2, CurrentRow].Value.ToString();
             Sostav_bluda.comboBox1_ID = (int)dataGridView1[1, CurrentRow].Value;
             Sostav_bluda.textBox1.Text = dataGridView1[2, CurrentRow].Value.ToString();
             Sostav_bluda.textBox2.Text = dataGridView1[3, CurrentRow].Value.ToString();

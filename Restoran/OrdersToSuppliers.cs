@@ -65,10 +65,6 @@ namespace Restoran
                 min.Text = "Заказ поставщику № " + r + " от " + Convert.ToDateTime(dataGridView1[1, CurrentRow].Value).ToString("dd/MM/yyyy");
 
                 min.Show();
-                ////строка сохранения
-                //Sostav_bluda.Str_Red = CurrentRow;
-
-                //Sostav_bluda.Show();
             }
         }
 

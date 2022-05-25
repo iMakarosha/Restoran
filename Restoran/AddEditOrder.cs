@@ -38,36 +38,22 @@ namespace Restoran
                 " order by ID_Documenta_zakaz desc";
 
             var result = new Handlers.SqlConnectionHandler().GetQueryResultList(queryStr);
-            System.Array x = ((System.Array)(result[0]));  //приводим к типу System.Array
+            System.Array x = ((System.Array)(result[0]));
             this.ID_Zakaz = Convert.ToInt32(x.GetValue(0)) + 1; 
         }
 
         private void Zakazat_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kalkuliac". При необходимости она может быть перемещена или удалена.
             this.kalkuliacTableAdapter.Fill(this.restoranDataSet.Kalkuliac);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Postuplenie_producta". При необходимости она может быть перемещена или удалена.
             this.postuplenie_productaTableAdapter.Fill(this.restoranDataSet.Postuplenie_producta);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kalkuliac". При необходимости она может быть перемещена или удалена.
             this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Zakaz". При необходимости она может быть перемещена или удалена.
             this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Gruppa_blud". При необходимости она может быть перемещена или удалена.
             this.gruppa_bludTableAdapter.Fill(this.restoranDataSet.Gruppa_blud);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
 
             comboBox1.SelectedIndex = -1;
             FindCustomers1(ID_Zakaz);
-
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    c += Convert.ToDecimal(dataGridView1[5, i].Value);
-            //}
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,7 +135,6 @@ namespace Restoran
             ClickClick(ID_Zakaz);
         }
 
-        // public decimal c = 0;
         void ClickClick(int ID_Zakaz)
         {
             int CurrentRow = dataGridView2.SelectedCells[0].RowIndex;
@@ -176,23 +161,11 @@ namespace Restoran
 
                 restoranDataSet.Tables["Zakaz"].Rows.Add(rowB);
 
-                //   decimal c = 0;
-                //for (int i = 0; i < dataGridView1.RowCount; i++)
-                //{
-                //    c += Convert.ToDecimal(dataGridView1[5, i].Value);
-                //}
-
                 decimal c = Convert.ToDecimal(cena_nac);
                 decimal star = Convert.ToDecimal(label3.Text);
 
                 decimal cc = Convert.ToDecimal(cena_nac) + star;
-                //  c = cc;
                 label3.Text = cc.ToString();
-                //   c = 0;
-
-                //  double Cesna = Convert.ToDouble(dataGridView1[4, dataGridView1.RowCount - 1].Value.ToString()) * Convert.ToDouble(dataGridView1[3, dataGridView1.RowCount - 1].Value.ToString());
-
-                //  dataGridView1[5, dataGridView1.RowCount - 1].Value = Convert.ToDecimal(Cesna);
             }
             else
             {
@@ -230,14 +203,10 @@ namespace Restoran
 
                         restoranDataSet.Tables["Zakaz"].Rows.Add(rowB);
 
-                        //       double Cesna = Convert.ToDouble(dataGridView1[4, dataGridView1.RowCount - 1].Value.ToString()) * Convert.ToDouble(dataGridView1[3, dataGridView1.RowCount - 1].Value.ToString());
-
-                        //       dataGridView1[5, dataGridView1.RowCount - 1].Value = Convert.ToDecimal(Cena);
                         decimal c = Convert.ToDecimal(cena_nac);
                         decimal star = Convert.ToDecimal(label3.Text);
 
                         decimal cc = Convert.ToDecimal(cena_nac) + star;
-                        //  c = cc;
                         label3.Text = cc.ToString();
                     }
                 }
@@ -314,68 +283,54 @@ namespace Restoran
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (cbOfitsiant.SelectedIndex > -1 && !string.IsNullOrEmpty(tbNumTable.Text))
             {
-                if (button1.Text == "Добавить")
+                try
                 {
-                    restoranDataSet.Tables["Document_Zakazz"].Rows.Add();
-                    this.Validate();
-                    this.documentZakazzBindingSource.EndEdit();
-                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
-
-                    this.Validate();
-                    this.zakazBindingSource.EndEdit();
-                    this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
-
-                    dataGridView3[1, ID_str_Zakaz - 1].Value = dateTimePicker1.Text;
-                    dataGridView3[2, ID_str_Zakaz - 1].Value = Convert.ToDecimal(label3.Text);
-
-                    this.Validate();
-                    this.documentZakazzBindingSource.EndEdit();
-                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
-
-                    this.Validate();
-                    this.kalkuliacBindingSource.EndEdit();
-                    this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
-
-                    MessageBox.Show("Заказ добавлен!");
-                    Close();
-
-                }
-                else if (button1.Text == "Сохранить")
-                {
-                    this.Validate();
-                    this.zakazBindingSource.EndEdit();
-                    this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
-
-                    dataGridView3[1, ID_str_Zakaz].Value = dateTimePicker1.Text;
-                    dataGridView3[2, ID_str_Zakaz].Value = Convert.ToDecimal(label3.Text);
-                
-                    dataGridView3[3, ID_str_Zakaz].Value = Convert.ToInt32(tbNumTable.Text);
-
-                    if (cbOfitsiant.SelectedIndex > -1) 
+                    if (button1.Text == "Добавить")
                     {
-                        dataGridView3[4, ID_str_Zakaz].Value = Convert.ToInt32(cbOfitsiant.SelectedIndex);
+                        string queryStr = $"INSERT INTO Document_Zakazz (ID_Documenta_zakaz, [Data], Summa_zakaza, ID_Sotrudniki, Num_stola) " +
+                            $"VALUES ( {this.ID_Zakaz}, '{dateTimePicker1.Value.ToString("dd-MM-yyyy")}', " +
+                            $"{Convert.ToDecimal(label3.Text).ToString().Replace(',', '.')}, " +
+                            $"{Convert.ToInt32(cbOfitsiant.SelectedValue)}, {Convert.ToInt32(tbNumTable.Text)})";
+                        new Handlers.SqlConnectionHandler().ExecuteNonQuery(queryStr);
+
+                        this.Validate();
+                        this.zakazBindingSource.EndEdit();
+                        this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
+
+                        this.Validate();
+                        this.kalkuliacBindingSource.EndEdit();
+                        this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
+
+                        MessageBox.Show("Заказ добавлен!");
+                        Close();
+
                     }
-                    else
+                    else if (button1.Text == "Сохранить")
                     {
-                        dataGridView3[4, ID_str_Zakaz].Value = null;
+                        this.Validate();
+                        this.zakazBindingSource.EndEdit();
+                        this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
+
+                        string queryStr = $"UPDATE Document_Zakazz SET [Data] = '{dateTimePicker1.Value.ToString("dd-MM-yyyy")}', " +
+                            $"Summa_zakaza = {Convert.ToDecimal(label3.Text).ToString().Replace(',', '.')}, " +
+                            $"ID_Sotrudniki = {Convert.ToInt32(cbOfitsiant.SelectedValue)}, " +
+                            $"Num_stola = {Convert.ToInt32(tbNumTable.Text)} WHERE ID_Documenta_zakaz = {this.ID_Zakaz}";
+                        new Handlers.SqlConnectionHandler().ExecuteNonQuery(queryStr);
+
+                        this.Validate();
+                        this.kalkuliacBindingSource.EndEdit();
+                        this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
+
+                        MessageBox.Show("Заказ сохранен!");
+
+                        Close();
                     }
-
-                    this.Validate();
-                    this.documentZakazzBindingSource.EndEdit();
-                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
-
-                    this.Validate();
-                    this.kalkuliacBindingSource.EndEdit();
-                    this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
-
-                    MessageBox.Show("Заказ сохранен!");
-
-                    Close();
                 }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            else MessageBox.Show("Заполните все поля!");
 
         }
 
@@ -503,5 +458,13 @@ namespace Restoran
 
         }
 
+        private void tbNumTable_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

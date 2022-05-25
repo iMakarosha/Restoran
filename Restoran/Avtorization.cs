@@ -44,7 +44,6 @@ namespace Restoran
                 // строим запрос средствами Linq  
                 string zaproc = "select Parol from Avtorization where ID_Sotrudniki= " + comboBox3.Text;
 
-                //object paroll = new Handlers.SqlConnectionHandler().new Handlers.SqlConnectionHandler().GetQueryResult(zaproc);
                 object paroll = new Handlers.SqlConnectionHandler().GetQueryResult(zaproc);
 
                 //     Авторизация a = new Авторизация();
@@ -72,11 +71,6 @@ namespace Restoran
                     if (id == 3)
                     {
                         AdminStartPage f = new AdminStartPage();
-                        //Главная_форма f = new Главная_форма();
-                        //f.блюдаToolStripMenuItem.Visible = false;
-                        //f.группаБлюдToolStripMenuItem.Visible = false;
-                        //f.единицаИзмеренийToolStripMenuItem.Visible = false;
-                        //f.продуктToolStripMenuItem.Visible = false;
                         f.Text = "Подсистема Администратора";
                         f.Show();
                         this.Hide();
@@ -86,7 +80,6 @@ namespace Restoran
                     if (id == 5)
                     {
                         DishesCalculationPage f = new DishesCalculationPage();
-                        //   f.сотрудникиToolStripMenuItem1.Visible = false;
                         f.Text = "Подсистема Калькулятора";
                         f.Show();
                         this.Hide();

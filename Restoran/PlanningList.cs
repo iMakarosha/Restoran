@@ -23,9 +23,7 @@ namespace Restoran
 
         private void SpisokPlan_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Min_zakaz". При необходимости она может быть перемещена или удалена.
             this.min_zakazTableAdapter.Fill(this.restoranDataSet.Min_zakaz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.PlanPlan". При необходимости она может быть перемещена или удалена.
             this.planPlanTableAdapter.Fill(this.restoranDataSet.PlanPlan);
         }
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

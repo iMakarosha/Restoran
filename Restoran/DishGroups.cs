@@ -152,7 +152,6 @@ namespace Restoran
         {
             if (this.WindowState == System.Windows.Forms.FormWindowState.Normal)
             {
-                // int y = System.Windows.Forms.Cursor.Position.Y;
                 int y = this.Height;
                 dataGridView1.Height = y - 70;
             }

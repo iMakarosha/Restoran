@@ -261,13 +261,6 @@ namespace Restoran
                 }
             }
 
-            //double S = 0;
-            //double sum = 0;
-            //for (int i = 0; i < dataGridView2.RowCount; i++)
-            //{
-            //   S+= Convert.ToDouble( dataGridView2[6, i].Value.ToString());
-            //}
-            //   sum = Convert.ToDouble(S);
             oDoc.Bookmarks["SUM"].Range.Text = dataGridView1[3, CurrentRow].Value.ToString();
             oDoc.Bookmarks["SUMM"].Range.Text = dataGridView1[3, CurrentRow].Value.ToString();
 

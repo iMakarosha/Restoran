@@ -25,9 +25,7 @@ namespace Restoran
 
         private void AddEditRewardIncentive_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Document_Zakazz". При необходимости она может быть перемещена или удалена.
             this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
             comboBox2.SelectedIndex = -1;
 
@@ -66,7 +64,6 @@ namespace Restoran
 
                     if (reward == null)
                     {
-                        //add
                         queryStr = $"INSERT INTO Rewards_Incentives (Id_Note, Id_Sotrudnik, [Data], Id_Order, Information, Result) " +
                             $"VALUES ( {rewardIdTemp}, {comboBox1.SelectedValue}, '{date}', " +
                             $"{order_id}, '{textBox2.Text}', {result})";

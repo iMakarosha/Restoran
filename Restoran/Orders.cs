@@ -20,11 +20,6 @@ namespace Restoran
 
         private void Zakaz_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Zakaz". При необходимости она может быть перемещена или удалена.
-            this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kalkuliac". При необходимости она может быть перемещена или удалена.
-            this.kalkuliacTableAdapter.Fill(this.restoranDataSet.Kalkuliac);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Document_Zakazz". При необходимости она может быть перемещена или удалена.
             this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
         }
 
@@ -38,7 +33,9 @@ namespace Restoran
                 Zakaza.Text = "Новый заказ";
                 Zakaza.button1.Text = "Добавить";
 
-                Zakaza.Show();
+                Zakaza.ShowDialog();
+
+                this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); };
         }
@@ -50,7 +47,6 @@ namespace Restoran
 
             AddEditOrder Zakazat = new AddEditOrder();
 
-            //  Sostav_bluda.Text = dataGridView1[2, CurrentRow].Value.ToString();
             Zakazat.dateTimePicker1.Text = dataGridView1[1, CurrentRow].Value.ToString();
             Zakazat.label3.Text = dataGridView1[2, CurrentRow].Value.ToString();
             Zakazat.tbNumTable.Text = dataGridView1[3, CurrentRow].Value.ToString();
@@ -66,7 +62,9 @@ namespace Restoran
             else
                 Zakazat.cbOfitsiant.SelectedIndex = -1;
 
-            Zakazat.Show();
+            Zakazat.ShowDialog();
+
+            this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
         }
 
         private void Zakaz_Activated(object sender, EventArgs e)
@@ -78,71 +76,41 @@ namespace Restoran
                 {
                     dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                 }
-            }
-
-            this.kalkuliacTableAdapter.Fill(this.restoranDataSet.Kalkuliac);
-            this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-
-            Sverka();
-
-            this.kalkuliacTableAdapter.Fill(this.restoranDataSet.Kalkuliac);
-            this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-        }
-
-        void Sverka()
-        {
-            for (int i = 0; i < dataGridView2.RowCount; i++)
-            {
-                int k = 0;
-                //    int id=
-                for (int j = 0; j < dataGridView3.RowCount; j++)
-                {
-                    if ((int)dataGridView2[5, i].Value == (int)dataGridView3[0, j].Value)
-                    {
-                        k++;
-                    }
-                }
-                if (k == 0)
-                {
-                    ///если не нашел равных то удаляем эту строку
-                    ///
-                    dataGridView2.Rows.Remove(dataGridView2.Rows[i]);
-
-                    i--;
-                    this.Validate();
-                    this.kalkuliacBindingSource.EndEdit();
-                    this.kalkuliacTableAdapter.Update(this.restoranDataSet.Kalkuliac);
-                }
-            }
+            }           
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count != 0)
             {
-                try
+                int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+                int r = (int)dataGridView1[0, CurrentRow].Value;
+
+                DialogResult result = MessageBox.Show("Это действие нельзя отменить. Подтвердить удаление?", "Удаление заказа", MessageBoxButtons.YesNo);
+
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
-                    int r = (int)dataGridView1[0, CurrentRow].Value;
-
-                    string sql1 = "Delete from Document_Zakazz WHERE ID_Documenta_zakaz=@ID_Documenta_zakaz";
-
-                    string sql2 = "Delete from Zakaz WHERE ID_Documenta_zakaz=@ID_Documenta_zakaz";
-
-                    using (SqlCommand cmd2 = new SqlCommand(sql2))
+                    try
                     {
-                        cmd2.Parameters.AddWithValue("@ID_Documenta_zakaz", r);
-                        new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd2);
-                    }
-                    using (SqlCommand cmd1 = new SqlCommand(sql1))
-                    {
-                        cmd1.Parameters.AddWithValue("@ID_Documenta_zakaz", r);
-                        new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd1);
-                    }
+                        string sql1 = "Delete from Document_Zakazz WHERE ID_Documenta_zakaz=@ID_Documenta_zakaz";
 
-                    this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
+                        string sql2 = "Delete from Zakaz WHERE ID_Documenta_zakaz=@ID_Documenta_zakaz";
+
+                        using (SqlCommand cmd2 = new SqlCommand(sql2))
+                        {
+                            cmd2.Parameters.AddWithValue("@ID_Documenta_zakaz", r);
+                            new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd2);
+                        }
+                        using (SqlCommand cmd1 = new SqlCommand(sql1))
+                        {
+                            cmd1.Parameters.AddWithValue("@ID_Documenta_zakaz", r);
+                            new Handlers.SqlConnectionHandler().ExecuteNonQuery(cmd1);
+                        }
+
+                        this.document_ZakazzTableAdapter.Fill(this.restoranDataSet.Document_Zakazz);
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 

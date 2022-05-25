@@ -314,11 +314,6 @@ namespace Restoran
 
         private void comboBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
-            //{
-            //    comboBox3.SelectedIndex = -1;
-            //    comboBox2.SelectedIndex = -1;
-            //}
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)

@@ -180,7 +180,7 @@ namespace Restoran
 
                 //    //кол-во * продажную цену = сумма
                 double Summa = 0;
-                //     double Ob_Summa = 0;
+
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
                     id_stroki = 0;

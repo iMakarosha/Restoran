@@ -20,7 +20,6 @@ namespace Restoran
 
         private void Planirovanie_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.PlanPlan". При необходимости она может быть перемещена или удалена.
             this.planPlanTableAdapter.Fill(this.restoranDataSet.PlanPlan);
 
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
@@ -41,12 +40,10 @@ namespace Restoran
                 id = i;
                 break;
             }
-            // int ID_kontragenta = 0;
 
             AddEditPlanning Min_planirovanie = new AddEditPlanning();
             Min_planirovanie.ID_plan = (int)dataGridView1[0, dataGridView1.Rows.Count - 1].Value;
 
-            // ADD_Kontragent.button1.Text = "Добавить";
             Min_planirovanie.Show();
         }
 

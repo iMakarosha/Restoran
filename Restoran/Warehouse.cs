@@ -41,12 +41,6 @@ namespace Restoran
             edinica.Show();
         }
 
-        private void планированиеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Planirovanie plan = new Planirovanie();
-            //     plan.Show();
-        }
-
         private void заказПоставщикуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OrdersToSuppliers z = new OrdersToSuppliers();

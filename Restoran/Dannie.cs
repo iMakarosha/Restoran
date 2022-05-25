@@ -19,7 +19,6 @@ namespace Restoran
 
         private void Dannie_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet1.Dannie". При необходимости она может быть перемещена или удалена.
             this.dannieTableAdapter.Fill(this.restoranDataSet1.Dannie);
         }
 

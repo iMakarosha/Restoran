@@ -29,13 +29,9 @@ namespace Restoran
 
         private void Otchet_1_Kal_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Otchet_1". При необходимости она может быть перемещена или удалена.
             this.otchet_1TableAdapter.Fill(this.restoranDataSet.Otchet_1);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sostav_Bluda". При необходимости она может быть перемещена или удалена.
             this.sostav_BludaTableAdapter.Fill(this.restoranDataSet.Sostav_Bluda);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Otchet_1". При необходимости она может быть перемещена или удалена.
             this.otchet_1TableAdapter.Fill(this.restoranDataSet.Otchet_1);
             if (dataGridView1.Rows.Count > 0)
             {

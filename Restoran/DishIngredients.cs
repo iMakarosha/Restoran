@@ -28,17 +28,10 @@ namespace Restoran
 
         private void Sostav_bluda_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
             this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Bludo_Doc". При необходимости она может быть перемещена или удалена.
-            //    this.bludo_DocTableAdapter.Fill(this.restoranDataSet.Bludo_Doc);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Gruppa_blud". При необходимости она может быть перемещена или удалена.
             this.gruppa_bludTableAdapter.Fill(this.restoranDataSet.Gruppa_blud);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Edinica_izmerenia". При необходимости она может быть перемещена или удалена.
             this.edinica_izmereniaTableAdapter.Fill(this.restoranDataSet.Edinica_izmerenia);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Product". При необходимости она может быть перемещена или удалена.
             this.productTableAdapter.Fill(this.restoranDataSet.Product);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sostav_Bluda". При необходимости она может быть перемещена или удалена.
             this.sostav_BludaTableAdapter.Fill(this.restoranDataSet.Sostav_Bluda);
 
             //фильтрация
@@ -190,15 +183,8 @@ namespace Restoran
                     int CurrentRow1 = dataGridView1.SelectedCells[0].RowIndex;
                     int r1 = (int)dataGridView1[1, CurrentRow1].Value;
 
-                    //if (k !=0)
-                    //{
-                    //    Vibor_producta((int)dataGridView1[1, CurrentRow1].Value);
-
-                    //}
-
                     int CurrentRow = dataGridView1.SelectedCells[0].RowIndex;
                     int r = (int)dataGridView1[4, CurrentRow].Value;
-                    //   int rr = (int)dataGridView1[0, CurrentRow].Value;
 
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {

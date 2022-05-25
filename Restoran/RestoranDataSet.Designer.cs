@@ -18676,81 +18676,89 @@ SELECT ID_Documenta_zakaz, Data, Summa_zakaza, ID_Sotrudniki, Num_stola FROM Doc
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int Update(int ID_Documenta_zakaz, string Data, global::System.Nullable<int> ID_Sotrudniki, global::System.Nullable<decimal> Summa_zakaza, global::System.Nullable<int> Num_stola, int Original_ID_Documenta_zakaz, global::System.Nullable<int> IsNull_Data, global::System.Nullable<int> IsNull_ID_Sotrudniki, global::System.Nullable<int> IsNull_Summa_Itogo, string Original_Data) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
-            if ((Data == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Data));
-            }
-            if ((ID_Sotrudniki.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(ID_Sotrudniki.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Summa_zakaza.HasValue == true)) {
-                command.Parameters[3].Value = ((decimal)(Summa_zakaza.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Num_stola.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(Num_stola.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            command.Parameters[5].Value = ((int)(Original_ID_Documenta_zakaz));
-            if ((IsNull_Data.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(IsNull_Data.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_ID_Sotrudniki.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(IsNull_ID_Sotrudniki.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_Summa_Itogo.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(IsNull_Summa_Itogo.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Data == null)) {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[9].Value = ((string)(Original_Data));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+        public virtual int Update(RestoranDataSet.Document_ZakazzDataTable dataTable)
+        {
+            return this.Adapter.Update(dataTable);
         }
+
+        //[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        //[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        //[global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        //[global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        //public virtual int Update(int ID_Documenta_zakaz, string Data, global::System.Nullable<int> ID_Sotrudniki, global::System.Nullable<decimal> Summa_zakaza, global::System.Nullable<int> Num_stola, int Original_ID_Documenta_zakaz, global::System.Nullable<int> IsNull_Data, global::System.Nullable<int> IsNull_ID_Sotrudniki, global::System.Nullable<int> IsNull_Summa_Itogo, string Original_Data) {
+        //    global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+        //    command.Parameters[0].Value = ((int)(ID_Documenta_zakaz));
+        //    if ((Data == null)) {
+        //        command.Parameters[1].Value = global::System.DBNull.Value;
+        //    }
+        //    else {
+        //        command.Parameters[1].Value = ((string)(Data));
+        //    }
+        //    if ((ID_Sotrudniki.HasValue == true)) {
+        //        command.Parameters[2].Value = ((int)(ID_Sotrudniki.Value));
+        //    }
+        //    else {
+        //        command.Parameters[2].Value = global::System.DBNull.Value;
+        //    }
+        //    if ((Summa_zakaza.HasValue == true)) {
+        //        command.Parameters[3].Value = ((decimal)(Summa_zakaza.Value));
+        //    }
+        //    else {
+        //        command.Parameters[3].Value = global::System.DBNull.Value;
+        //    }
+        //    if ((Num_stola.HasValue == true)) {
+        //        command.Parameters[4].Value = ((int)(Num_stola.Value));
+        //    }
+        //    else {
+        //        command.Parameters[4].Value = global::System.DBNull.Value;
+        //    }
+        //    command.Parameters[5].Value = ((int)(Original_ID_Documenta_zakaz));
+        //    if ((IsNull_Data.HasValue == true)) {
+        //        command.Parameters[6].Value = ((int)(IsNull_Data.Value));
+        //    }
+        //    else {
+        //        command.Parameters[6].Value = global::System.DBNull.Value;
+        //    }
+        //    if ((IsNull_ID_Sotrudniki.HasValue == true)) {
+        //        command.Parameters[7].Value = ((int)(IsNull_ID_Sotrudniki.Value));
+        //    }
+        //    else {
+        //        command.Parameters[7].Value = global::System.DBNull.Value;
+        //    }
+        //    if ((IsNull_Summa_Itogo.HasValue == true)) {
+        //        command.Parameters[8].Value = ((int)(IsNull_Summa_Itogo.Value));
+        //    }
+        //    else {
+        //        command.Parameters[8].Value = global::System.DBNull.Value;
+        //    }
+        //    if ((Original_Data == null)) {
+        //        command.Parameters[9].Value = global::System.DBNull.Value;
+        //    }
+        //    else {
+        //        command.Parameters[9].Value = ((string)(Original_Data));
+        //    }
+        //    global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+        //    if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+        //                != global::System.Data.ConnectionState.Open)) {
+        //        command.Connection.Open();
+        //    }
+        //    int returnValue;
+        //    try {
+        //        returnValue = command.ExecuteNonQuery();
+        //    }
+        //    finally {
+        //        if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+        //            command.Connection.Close();
+        //        }
+        //    }
+        //    return returnValue;
+        //}
     }
-    
+
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>

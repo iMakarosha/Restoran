@@ -22,11 +22,8 @@ namespace Restoran
 
         private void Ostatok_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Product". При необходимости она может быть перемещена или удалена.
             this.productTableAdapter.Fill(this.restoranDataSet.Product);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Min_ostatok". При необходимости она может быть перемещена или удалена.
             this.min_ostatokTableAdapter.Fill(this.restoranDataSet.Min_ostatok);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Big_ostatok". При необходимости она может быть перемещена или удалена.
             this.big_ostatokTableAdapter.Fill(this.restoranDataSet.Big_ostatok);
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 this.dataGridView1.Columns[i].HeaderCell.Style.BackColor = Color.Moccasin;
@@ -265,9 +262,7 @@ namespace Restoran
 
                 //    Израсходовоно
 
-                // double I = 0;
                 string str44 = "select ID_Documenta_zakaz from Document_Zakazz Where Data = '" + date.ToString("yyyy/MM/dd") + "'";
-                //   string str44 = "select ID_Documenta_zakaz from Document_Zakazz Where [Data] = '05.10.2014'";
 
                 List<int> Operacii11 = new List<int>();
 

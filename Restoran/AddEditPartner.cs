@@ -35,7 +35,6 @@ namespace Restoran
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
-            // int k = 0;
             bool if_f = true;
 
             if (textBox1.Text == "" || textBox6.Text == "")

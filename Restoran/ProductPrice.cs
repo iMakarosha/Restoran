@@ -18,7 +18,6 @@ namespace Restoran
         }
         private void Cena_producta_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Product". При необходимости она может быть перемещена или удалена.
             this.productTableAdapter.Fill(this.restoranDataSet.Product);
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -46,7 +45,6 @@ namespace Restoran
                 this.productBindingSource.EndEdit();
                 this.productTableAdapter.Update(this.restoranDataSet.Product);
 
-                //  Close();
                 return;
             }
             else

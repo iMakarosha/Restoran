@@ -24,11 +24,8 @@ namespace Restoran
         }
         private void Add_Sotrudnik_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Sotrudniki". При необходимости она может быть перемещена или удалена.
             this.sotrudnikiTableAdapter.Fill(this.restoranDataSet.Sotrudniki);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Dolgnost". При необходимости она может быть перемещена или удалена.
             this.dolgnostTableAdapter.Fill(this.restoranDataSet.Dolgnost);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Avtorization". При необходимости она может быть перемещена или удалена.
             this.avtorizationTableAdapter.Fill(this.restoranDataSet.Avtorization);
 
             if (ID_Polsovatel != -1)
@@ -78,7 +75,6 @@ namespace Restoran
 
             if (button1.Text == "Изменить")
             {
-                //СОХРАНИТЬ
                 using (SqlCommand cmd = new SqlCommand("Update Avtorization Set "
                         + "Parol= @Parol, ID_Dolgnost= @ID_Dolgnost" +
                         " WHERE ID_polizovatel= " + ID_Polsovatel))

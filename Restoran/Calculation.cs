@@ -23,13 +23,9 @@ namespace Restoran
         }
         private void Kalculiac_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Zakaz". При необходимости она может быть перемещена или удалена.
             this.zakazTableAdapter.Fill(this.restoranDataSet.Zakaz);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Edinica_izmerenia". При необходимости она может быть перемещена или удалена.
             this.edinica_izmereniaTableAdapter.Fill(this.restoranDataSet.Edinica_izmerenia);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Product". При необходимости она может быть перемещена или удалена.
             this.productTableAdapter.Fill(this.restoranDataSet.Product);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kalkuliac". При необходимости она может быть перемещена или удалена.
             this.kalkuliacTableAdapter.Fill(this.restoranDataSet.Kalkuliac);
 
 

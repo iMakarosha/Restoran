@@ -113,7 +113,6 @@
             this.планированиеToolStripMenuItem.Name = "планированиеToolStripMenuItem";
             this.планированиеToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.планированиеToolStripMenuItem.Text = "Планирование";
-            this.планированиеToolStripMenuItem.Click += new System.EventHandler(this.планированиеToolStripMenuItem_Click);
             // 
             // сведенияОбОстаткахToolStripMenuItem
             // 

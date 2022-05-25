@@ -37,7 +37,6 @@ namespace Restoran
 
         private void Min_zakaz_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.NDC". При необходимости она может быть перемещена или удалена.
             this.nDCTableAdapter.Fill(this.restoranDataSet.NDC);
             this.productTableAdapter.Fill(this.restoranDataSet.Product);
             this.edinica_izmereniaTableAdapter.Fill(this.restoranDataSet.Edinica_izmerenia);
@@ -372,8 +371,6 @@ namespace Restoran
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            // Displays the MessageBox.
-
             result = MessageBox.Show(message, caption, buttons);
 
             if (result == System.Windows.Forms.DialogResult.Yes)
@@ -422,8 +419,6 @@ namespace Restoran
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            // Displays the MessageBox.
-
             result = MessageBox.Show(message, caption, buttons);
 
             if (result == System.Windows.Forms.DialogResult.Yes)
@@ -433,8 +428,6 @@ namespace Restoran
                 PlanningList s = new PlanningList();
                 s.ID_Zakaz = ID_Zakaz;
                 s.Show();
-
-                // Formuli();
             }
             else
             {

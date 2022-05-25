@@ -20,12 +20,6 @@ namespace Restoran
 
         private void Kontragent_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Kontragent". При необходимости она может быть перемещена или удалена.
-            //   this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Document_Postuplenie". При необходимости она может быть перемещена или удалена.
-            //   this.document_PostuplenieTableAdapter.Fill(this.restoranDataSet.Document_Postuplenie);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "restoranDataSet.Postuplenie_producta". При необходимости она может быть перемещена или удалена.
-            //   this.postuplenie_productaTableAdapter.Fill(this.restoranDataSet.Postuplenie_producta);
             this.document_PostuplenieTableAdapter.Fill(this.restoranDataSet.Document_Postuplenie);
             this.kontragentTableAdapter.Fill(this.restoranDataSet.Kontragent);
 

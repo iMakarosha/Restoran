@@ -436,39 +436,6 @@ namespace Restoran
                     float sumSpisokKolva = SpisokKolva.AsQueryable().Sum();
 
                     double rez = (Convert.ToDouble(KolDays) * Convert.ToDouble(sumSpisokKolva)) / Convert.ToDouble(KolDaysProdag);
-                    //  double sumx = 0;
-                    ////г.п.
-                    //double gsumtx = 0, gsumt = 0, g_1_sumt = 0, g_1_sum_t_2 = 0;
-
-                    //for (int it = 0; it < SpisokKolva.Count; it++)
-                    //{
-                    //    sumx += Convert.ToDouble(SpisokKolva[it].ToString());
-
-                    //    ////гип.ф
-                    //    gsumtx += (Convert.ToDouble(SpisokKolva[it].ToString())) / (it + 1);
-                    //    gsumt += 1.0 / (it + 1);
-                    //    g_1_sum_t_2 += 1.0 / (Math.Pow((it + 1), 2));
-
-                    //}
-
-                    ////гипер. ф.
-                    //double a1 = (n * gsumtx - sumx * gsumt) / (n * g_1_sum_t_2 - Math.Pow(gsumt, 2));
-                    //double a0 = (1.0 / n) * (sumx) - (1.0 / n) * a1 * gsumt;
-                    //double rez = 0d;
-
-
-                    //  double time = Convert.ToDouble(KolDays);
-
-                    //  double[] vse1 = new double[Convert.ToInt32(time)];
-                    //  for (int i1 = 0; i1 < time; i1++)
-                    //  {
-                    //      //гипер. ф.
-                    //      vse1[i1] = a0 + (a1 / (i1 + 1));
-
-                    //  }
-
-                    ////  Сумма массива
-                    //      rez = vse1.Sum();
 
                     //Добавление в таблицу
                     DataRow rowB2 = restoranDataSet.Tables["Min_Plan"].NewRow();
