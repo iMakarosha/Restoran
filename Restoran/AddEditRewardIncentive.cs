@@ -59,7 +59,7 @@ namespace Restoran
                 {
                     string queryStr = "";
                     string order_id = (comboBox2.SelectedIndex != -1) ? comboBox2.SelectedValue.ToString() : "NULL";
-                    string date = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                    string date = dateTimePicker1.Value.ToString("MM-dd-yyyy");
                     string result = !string.IsNullOrEmpty(textBox3.Text)? ("'" + textBox3.Text + "'") : "''";
 
                     if (reward == null)

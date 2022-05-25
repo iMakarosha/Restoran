@@ -290,7 +290,7 @@ namespace Restoran
                     if (button1.Text == "Добавить")
                     {
                         string queryStr = $"INSERT INTO Document_Zakazz (ID_Documenta_zakaz, [Data], Summa_zakaza, ID_Sotrudniki, Num_stola) " +
-                            $"VALUES ( {this.ID_Zakaz}, '{dateTimePicker1.Value.ToString("dd-MM-yyyy")}', " +
+                            $"VALUES ( {this.ID_Zakaz}, '{dateTimePicker1.Value.ToString("MM-dd-yyyy")}', " +
                             $"{Convert.ToDecimal(label3.Text).ToString().Replace(',', '.')}, " +
                             $"{Convert.ToInt32(cbOfitsiant.SelectedValue)}, {Convert.ToInt32(tbNumTable.Text)})";
                         new Handlers.SqlConnectionHandler().ExecuteNonQuery(queryStr);
@@ -313,7 +313,7 @@ namespace Restoran
                         this.zakazBindingSource.EndEdit();
                         this.zakazTableAdapter.Update(this.restoranDataSet.Zakaz);
 
-                        string queryStr = $"UPDATE Document_Zakazz SET [Data] = '{dateTimePicker1.Value.ToString("dd-MM-yyyy")}', " +
+                        string queryStr = $"UPDATE Document_Zakazz SET [Data] = '{dateTimePicker1.Value.ToString("MM-dd-yyyy")}', " +
                             $"Summa_zakaza = {Convert.ToDecimal(label3.Text).ToString().Replace(',', '.')}, " +
                             $"ID_Sotrudniki = {Convert.ToInt32(cbOfitsiant.SelectedValue)}, " +
                             $"Num_stola = {Convert.ToInt32(tbNumTable.Text)} WHERE ID_Documenta_zakaz = {this.ID_Zakaz}";
@@ -464,6 +464,22 @@ namespace Restoran
             if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
             {
                 e.Handled = true;
+            }
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if(dataGridView1.Rows.Count > 0)
+            {
+                decimal sum = 0;
+
+                //recalc sum
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    sum += Convert.ToDecimal(dataGridView1[5, i].Value);
+                }
+
+                label3.Text = sum.ToString();
             }
         }
     }
