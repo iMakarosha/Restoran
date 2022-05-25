@@ -57,7 +57,7 @@ namespace Restoran
             Zakazat.button1.Text = "Сохранить";
             Zakazat.Text = "Редактировать заказ";
 
-            if (dataGridView1[4, CurrentRow].Value.ToString() != null)
+            if (!string.IsNullOrEmpty(dataGridView1[4, CurrentRow].Value.ToString()))
                 Zakazat.cbOfitsiant.SelectedValue = dataGridView1[4, CurrentRow].Value.ToString();
             else
                 Zakazat.cbOfitsiant.SelectedIndex = -1;
