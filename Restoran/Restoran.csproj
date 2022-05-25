@@ -75,6 +75,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditRewardIncentive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditRewardIncentive.Designer.cs">
+      <DependentUpon>AddEditRewardIncentive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RewardsAndIncentives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RewardsAndIncentives.Designer.cs">
+      <DependentUpon>RewardsAndIncentives.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditPartner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +299,12 @@
     <Compile Include="OrdersToSuppliers.Designer.cs">
       <DependentUpon>OrdersToSuppliers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEditRewardIncentive.resx">
+      <DependentUpon>AddEditRewardIncentive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RewardsAndIncentives.resx">
+      <DependentUpon>RewardsAndIncentives.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditPartner.resx">
       <DependentUpon>AddEditPartner.cs</DependentUpon>
     </EmbeddedResource>

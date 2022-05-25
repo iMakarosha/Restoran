@@ -39,5 +39,11 @@ namespace Restoran
             Employee s = new Employee();
             s.Show();
         }
+
+        private void взысканияИПоощренияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RewardsAndIncentives ri = new RewardsAndIncentives();
+            ri.Show();
+        }
     }
 }

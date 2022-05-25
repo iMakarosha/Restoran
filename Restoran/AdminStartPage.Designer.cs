@@ -33,6 +33,7 @@
             this.сотрудникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.данныеОбОрганизацииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.взысканияИПоощренияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,15 +51,16 @@
             // справочникToolStripMenuItem
             // 
             this.справочникToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сотрудникиToolStripMenuItem1});
+            this.сотрудникиToolStripMenuItem1,
+            this.взысканияИПоощренияToolStripMenuItem});
             this.справочникToolStripMenuItem.Name = "справочникToolStripMenuItem";
-            this.справочникToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.справочникToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.справочникToolStripMenuItem.Text = "Справочник";
             // 
             // сотрудникиToolStripMenuItem1
             // 
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem1_Click);
             // 
@@ -67,17 +69,24 @@
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.данныеОбОрганизацииToolStripMenuItem1});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // данныеОбОрганизацииToolStripMenuItem1
             // 
             this.данныеОбОрганизацииToolStripMenuItem1.Name = "данныеОбОрганизацииToolStripMenuItem1";
-            this.данныеОбОрганизацииToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
+            this.данныеОбОрганизацииToolStripMenuItem1.Size = new System.Drawing.Size(208, 22);
             this.данныеОбОрганизацииToolStripMenuItem1.Text = "Данные об организации";
             this.данныеОбОрганизацииToolStripMenuItem1.Click += new System.EventHandler(this.данныеОбОрганизацииToolStripMenuItem1_Click);
             // 
-            // Form1
+            // взысканияИПоощренияToolStripMenuItem
+            // 
+            this.взысканияИПоощренияToolStripMenuItem.Name = "взысканияИПоощренияToolStripMenuItem";
+            this.взысканияИПоощренияToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.взысканияИПоощренияToolStripMenuItem.Text = "Взыскания и поощрения";
+            this.взысканияИПоощренияToolStripMenuItem.Click += new System.EventHandler(this.взысканияИПоощренияToolStripMenuItem_Click);
+            // 
+            // AdminStartPage
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,7 +95,7 @@
             this.ClientSize = new System.Drawing.Size(509, 331);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "AdminStartPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автоматизированная система работы ресторана";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -104,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem данныеОбОрганизацииToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem справочникToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem взысканияИПоощренияToolStripMenuItem;
     }
 }
 

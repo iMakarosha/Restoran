@@ -321,7 +321,7 @@ namespace Restoran
                     restoranDataSet.Tables["Document_Zakazz"].Rows.Add();
                     this.Validate();
                     this.documentZakazzBindingSource.EndEdit();
-                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
 
                     this.Validate();
                     this.zakazBindingSource.EndEdit();
@@ -332,7 +332,7 @@ namespace Restoran
 
                     this.Validate();
                     this.documentZakazzBindingSource.EndEdit();
-                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
 
                     this.Validate();
                     this.kalkuliacBindingSource.EndEdit();
@@ -364,7 +364,7 @@ namespace Restoran
 
                     this.Validate();
                     this.documentZakazzBindingSource.EndEdit();
-                    this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
+                    //this.document_ZakazzTableAdapter.Update(this.restoranDataSet.Document_Zakazz);
 
                     this.Validate();
                     this.kalkuliacBindingSource.EndEdit();

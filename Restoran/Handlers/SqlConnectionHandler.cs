@@ -68,6 +68,22 @@ namespace Restoran.Handlers
             }
         }
 
+        public void ExecuteNonQuery(string queryString)
+        {
+            using (SqlConnection conn = new Handlers.SqlConnectionHandler().GetConnection())
+            {
+                SqlCommand MyCommand = new SqlCommand(queryString, conn);
+
+                MyCommand.Connection = conn;
+
+                conn.Open();
+
+                MyCommand.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
         public DataSet GetDataSet(string str)
         {
             SqlConnection conn = new Handlers.SqlConnectionHandler().GetConnection();

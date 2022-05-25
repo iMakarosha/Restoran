@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Data = new RustemSoft.DataGridViewColumns.DataGridViewDateTimeColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Documenta_zakaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Summa_zakaza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena_Bluda = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +89,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(542, 29);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(674, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 23);
             this.button1.TabIndex = 3;
@@ -100,6 +102,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Data,
@@ -110,17 +114,18 @@
             this.Summa_Kol_cen,
             this.Num_stola,
             this.Sotrudnik});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 140);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(655, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(787, 273);
             this.dataGridView1.TabIndex = 5;
             // 
             // Data
             // 
             this.Data.DataPropertyName = "Data";
-            this.Data.DateTimeDisplayFormat = RustemSoft.DataGridViewColumns.DateTimeStencils.DDMMYYYY;
+            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
+            this.Data.DefaultCellStyle = dataGridViewCellStyle1;
             this.Data.HeaderText = "Дата заказа";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
@@ -201,9 +206,9 @@
             // 
             // lbResult
             // 
-            this.lbResult.Location = new System.Drawing.Point(12, 83);
+            this.lbResult.Location = new System.Drawing.Point(12, 70);
             this.lbResult.Name = "lbResult";
-            this.lbResult.Size = new System.Drawing.Size(478, 54);
+            this.lbResult.Size = new System.Drawing.Size(478, 51);
             this.lbResult.TabIndex = 8;
             this.lbResult.Text = "Результат: ";
             // 
@@ -211,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 425);
+            this.ClientSize = new System.Drawing.Size(813, 413);
             this.Controls.Add(this.lbResult);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -241,7 +246,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbResult;
-        private RustemSoft.DataGridViewColumns.DataGridViewDateTimeColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Documenta_zakaz;
         private System.Windows.Forms.DataGridViewTextBoxColumn Summa_zakaza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena_Bluda;
